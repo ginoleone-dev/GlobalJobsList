@@ -1,0 +1,14 @@
+.footerMain{
+    position: fixed;
+    height: 50px;
+    background-image: linear-gradient(to right, #111a29, #1c3047);
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.footerTitle{
+  color: white;
+}

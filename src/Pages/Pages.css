@@ -1,0 +1,175 @@
+/* CONTACT PAGE */
+
+.completeContact{
+  margin-top: 30px;
+  height: 50vh;
+background-color: rgba(0,0,0, 0.2);
+position: relative;
+}
+
+
+.contactContent{
+position: absolute;
+left: 50%;
+top: 33%;
+transform: translate(-50%, -50%);
+padding: 10px;
+height: 300px;
+width: 600px;
+}
+
+.insideContactContent{
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+
+
+.contactTitle{
+  color: white;
+  font-size: 3.5rem;
+  font-family: sans-serif ;
+}
+
+.contactTitle2{
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 250;
+}
+
+.contactTitle3{
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 250;
+}
+
+
+.contactButton{
+  background-color: black;
+  color: white;
+box-sizing: border-box;
+  padding: 0.8rem 1.6rem;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+
+.btnContactDiv{
+  text-align: center;
+  margin-top: 2.2rem;
+}
+
+.aboutInputDiv{
+margin-top: 50px;
+
+
+}
+
+.contactInputField{
+  margin-left: 15px;
+  display: block;
+  text-align: center;
+  width: 560px;
+  height: 140px;
+  border-radius: 20px;
+}
+
+.contactInputField::after{
+  border-style: none;
+  border-color: none;
+}
+
+/* ABOUT PAGE*/
+.completeAbout{
+display: grid;
+height: 80vh;
+row-gap: 2rem;
+grid-template-areas:
+"title image"
+"content1 content2"
+;
+grid-template-rows: 0.8fr 0.9fr;
+grid-template-columns: 1fr 1fr;
+}
+
+
+.titleTextAbout{
+  grid-area: title;
+  display: flex;
+  align-items: center;
+  margin-left: 150px;
+  
+
+}
+
+.titleAbout{
+  color: white;
+  font-size: 3.5rem;
+  margin-top: 3rem;
+  font-family: sans-serif;
+  text-align: center;
+  width: 700px;
+
+}
+
+.blueText{
+  color: rgb(94, 94, 230);
+  text-shadow: 2px 2px black;
+}
+
+.imageDivAbout{
+  grid-area: image;
+  display: flex;
+  align-items: center;
+  margin-left: 150px;
+}
+
+.imageAbout{
+  width: 700px;
+  border-radius: 30px;
+  margin-top: 3rem;
+  margin-right: 3rem;
+}
+
+.aboutContent1{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  border-right: 2px white solid;
+  background-color: rgba(0,0,0, 0.2);
+
+
+}
+
+.aboutContent2{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  background-color: rgba(0,0,0, 0.2);
+}
+
+.madeWith{
+  color: white;
+  font-size: 3rem;
+
+}
+
+.fa-react{
+  font-size: 5rem;
+  color: white;
+  margin-left: 2rem;
+}
+
+
+.fa-github{
+  font-size: 5rem;
+  color: white;
+  margin-left: 2rem;
+}
+
+.checkGit{
+    color: white;
+  font-size: 3rem;
+}
