@@ -17,13 +17,13 @@ export default function About(){
       <div className='aboutContent1'>        
         <h3 className='checkGit'>Check our GitHub repo!</h3>
         <span className='githubIcon'>
-          <a href='https://github.com/' target="_blank"><i class="fab fa-github"></i></a>
+          <a href='https://github.com/' target="_blank"><i className="fab fa-github"></i></a>
         </span>        
       </div>
       <div className='aboutContent2'>
         <h3 className='madeWith'>Made with React Js</h3>
         <span className='reactIcon'>
-          <a href='https://reactjs.org/' target="_blank"><i class="fab fa-react"></i></a>
+          <a href='https://reactjs.org/' target="_blank"><i className="fab fa-react"></i></a>
         </span>
       </div>
     </div>
