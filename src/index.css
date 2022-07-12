@@ -9,42 +9,6 @@ body {
     background-image: linear-gradient(to right, #141e30, #243b55);
 }
 
- 
-.navBar{
-  background-image: linear-gradient(to right, #141e30, #243b55);
-  height: 60px;
-  margin-top: 20px;
-}
-
-.pageTitle{
-  font-size: 1.8rem;
-  float: left;
-  color: white;
-  overflow: hidden;
- padding: 10px 100px;
-}
-
-/* Navbar #1985a1 */
-.mainNav{
-  display: flex;
-  overflow: hidden;
-  float: right;
-  margin-right: 15%;
-}
-
-.navItem{
-  font-size: 1.5rem;
- text-decoration: none;
- color: white;
- padding: 10px 40px;
-}
-
-.navItem:hover{
-  text-decoration: underline;
-}
-
-/* Navbar */
-
 
 /*Text below navbar  */
 .mainContainer{
@@ -344,5 +308,27 @@ margin-left: 2rem;
 }
 
 
+@media only screen and (max-width: 900px) {
+  .mainContainer{
+  display: grid;
+  height: auto;
+  grid-template-areas: 
+  "title"
+  "employee"
+  "title1"
+  "employer"
+  ;
+  grid-template-rows: 0.1fr 0.7fr 0.1fr 0.7fr;
+  grid-template-columns: 1fr;
+}
 
+.textEmployee{
+  margin-top: 80px;
+  
+}
+
+.textEmployer{
+  margin-top: 0;
+}
+}
 
