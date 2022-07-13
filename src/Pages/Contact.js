@@ -34,7 +34,7 @@ console.log(formData)
         <h5 className='insideContactContent contactTitle3'>If you think we can improve something, please let us know!</h5>
         <form className="aboutInputDiv">
           <input 
-            // className="insideContent contactInputField" 
+            className="insideContent contactInputField" 
             placeholder="First Name"
             type="text"     
             onChange={handleChange}  
@@ -42,7 +42,7 @@ console.log(formData)
             value={formData.firstname}
           />
           <input 
-            // className="insideContent contactInputField" 
+            className="insideContent contactInputField" 
             placeholder="Last Name"
             type="text"     
             onChange={handleChange}
