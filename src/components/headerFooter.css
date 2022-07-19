@@ -82,7 +82,7 @@ font-size: 1.5rem;
     top: 60px;
     flex-direction: column;
     width: 100%;
-    height: calc(40vh - 70px);
+    height: calc(31.5vh - 70px);
     background-color: white;
     border-top: 1px solid black;
     display: none;

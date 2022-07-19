@@ -1,4 +1,6 @@
 import React, {useState}from "react";
+import '../index.css'
+import '../components/modals.css'
 
 export default function EmployeeMenu({menuItem}){
 
@@ -44,28 +46,26 @@ const openInNewTab = url => {
         })
       }
 
-        {modalToggle&& <div className="modalContainer" onClick={changeContent}>
+                {modalToggle&& <div className="modalContainer" onClick={changeContent}>
         <div className="modalBody" onClick={(event)=>event.stopPropagation()}>
-            <div className="modalHeader">
+            <div className="modalExit">
               <button className="exitModal" onClick={changeContent}>x</button>
-            </div>
+            </div >
               {modalContent.map((modal)=>{
                 return(
                   <div key={modal.id} className="modalCard">
-                    <div className="modal">
-                        <div className="modalInfo">
-                          <img className="modalImg" src={modal.imageUrl}></img>
-                          <h2 className="modalTitle">{modal.firstName}, {modal.title} - {modal.payRate}</h2>
-                        </div>
-                      <h3 className="modalOrg">{modal.field}</h3>
-                      <h4 className="modalShort">If you need an experienced {modal.title} to boost your business in {modal.location}, {modal.firstName} might be the right person for you!</h4>
-                       <p className="modalDescription">{modal.description}</p>
-                       <div className="messageBtnDiv">
-                      <button className="messageBtn" onClick={()=>openInNewTab('https://google.com')}>Message {modal.firstName}</button>
-                      </div>
-                   </div>
-                   
-
+                    <div className="modalHead">
+                      <img className="modalImg" src={modal.imageUrl}></img>
+                      <h2 className="modalTitle">{modal.title} from {modal.location}</h2>
+                      <h3 className="modalPay">{modal.payRate}</h3>
+                    </div>
+                    <div className="modalInfo">
+                      <h4 className="modalShort">If you are an experienced {modal.title} who wants to grow in a high performing business in {modal.field}, we are perfect for you. </h4>
+                      <p className="modalDescription">{modal.description}</p>
+                    </div>
+                    <div className="messageBtnDiv">
+                     <button className="messageBtn">Message {modal.firstName}</button>
+                  </div>
                   </div>
                 )
                 

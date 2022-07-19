@@ -8,13 +8,12 @@
  justify-content: center;
   height: 50vh;
 background-color: rgba(0,0,0, 0.2);
-
 }
 
 
 .contactContent{
 padding: 10px;
-height: 300px;
+height: 400px;
 width: 600px;
 }
 
@@ -236,13 +235,17 @@ height: 100px;
 margin-bottom: 40px;
 }
 
+.completeContact{
+  height: 60vh;
+}
+
 }
 
 @media only screen and (max-width: 900px) {
-
+/* 
   .imageDivAbout{
     margin-top: 50px;
-  }
+  } */
   
   .aboutContent1{
 display: flex;
@@ -261,13 +264,12 @@ margin-bottom: 80px;
 width: 540px;
 }
 
-.titleAbout{
-  font-size: 2.8rem;
+.completeContact{
+  height: 60vh;
 }
 
-.listingEmployee{
-  display: flex;
-  justify-content: center;
-}
+
+
+
 
 }

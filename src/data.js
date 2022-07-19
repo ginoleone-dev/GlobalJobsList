@@ -58,7 +58,7 @@ export default {
   organization: "Logitech",
   location: "Costa Rica",
   payRate: "$35/h",
-  description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at condimentum magna. Phasellus iaculis fermentum felis, id molestie quam. Vestibulum.",
+  description:"I'm a Financial Advisor with over 25 years of experience in the financial world, helping businesses and individuals manage capital effectively. I have done freelance work for for-profit and non-profit companies, including Girl Scouts of Greater Atlanta, Ochsner Clinic Foundation, Ronald McDonald House Charities-South Louisiana, and Volunteers of America (Baton Rouge chapter), and working at Girl Scouts Louisiana East for the last 13 years.",
   imageUrl: "../images/company.jpg"
  },
  {
