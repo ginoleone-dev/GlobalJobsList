@@ -1,5 +1,6 @@
 import React, {useState}from "react";
 
+
 export default function EmployerMenu({menuItem}){
 
 const [modalContent, setModalContent] = useState([])
@@ -10,12 +11,6 @@ const [modalToggle, setModalToggle] = useState(false)
     setModalContent([item]);
     setModalToggle(!modalToggle);
 }
-
-
-
-
-
-
 
   return(
     <div className="content-container" >
@@ -42,26 +37,24 @@ const [modalToggle, setModalToggle] = useState(false)
 
         {modalToggle&& <div className="modalContainer" onClick={changeContent}>
         <div className="modalBody" onClick={(event)=>event.stopPropagation()}>
-            <div className="modalHeader">
+            <div className="modalExit">
               <button className="exitModal" onClick={changeContent}>x</button>
-            </div>
+            </div >
               {modalContent.map((modal)=>{
                 return(
                   <div key={modal.id} className="modalCard">
-                    <div className="modal">
-                      <div className="modalInfo">
-                        <img className="modalImg" src={modal.imageUrl}></img>
-                        <h2 className="modalTitle">{modal.title} - {modal.payRate}</h2>
-                      </div>
-                        <h3 className="modalOrg">{modal.organization}</h3>
-                       <h4 className="modalShort">If you are an experienced {modal.title} who wants to grow in a high performing business in {modal.field}, we are perfect for you. </h4>
-                       <p className="modalDescription">{modal.description}</p>
-                       <div className="messageBtnDiv">
-                        <button className="messageBtn">Message {modal.organization}</button>
-                      </div>
-                   </div>
-                   
-
+                    <div className="modalHead">
+                      <img className="modalImg" src={modal.imageUrl}></img>
+                      <h2 className="modalTitle">{modal.title} at {modal.organization}</h2>
+                      <h3 className="modalPay">{modal.payRate}</h3>
+                    </div>
+                    <div className="modalInfo">
+                      <h4 className="modalShort">If you are an experienced {modal.title} who wants to grow in a high performing business in {modal.field}, we are perfect for you. </h4>
+                      <p className="modalDescription">{modal.description}</p>
+                    </div>
+                    <div className="messageBtnDiv">
+                     <button className="messageBtn">Message {modal.organization}</button>
+                  </div>
                   </div>
                 )
                 
@@ -77,3 +70,20 @@ const [modalToggle, setModalToggle] = useState(false)
 
 
 
+                  // <div key={modal.id} className="modalCard">
+                  //   <div className="modal">
+                  //     <h1>Hello</h1>
+                  //     <div className="modalInfo">
+                  //       <img className="modalImg" src={modal.imageUrl}></img>
+                  //       <h2 className="modalTitle">{modal.title} - {modal.payRate}</h2>
+                  //     </div>
+                  //       <h3 className="modalOrg">{modal.organization}</h3>
+                  //      <h4 className="modalShort">If you are an experienced {modal.title} who wants to grow in a high performing business in {modal.field}, we are perfect for you. </h4>
+                  //      <p className="modalDescription">{modal.description}</p>
+                  //      <div className="messageBtnDiv">
+                  //       <button className="messageBtn">Message {modal.organization}</button>
+                  //     </div>
+                  //  </div>
+                   
+
+                  // </div>

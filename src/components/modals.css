@@ -1,0 +1,171 @@
+.modalCard{
+    display: grid;
+  height: auto;
+  grid-template-areas: 
+  "title"
+  "body"
+  "message"
+  ;
+  grid-template-rows: 0.2fr 0.7fr 0.1fr;
+  grid-template-columns: 1fr;
+  row-gap: 1rem;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+
+.modalBody{
+  margin-top: 10%;
+   width: 50%;
+  height: 70%; 
+  background-color: #fff;
+  border-radius: 30px;
+  margin: auto;
+} 
+
+.exitModal{
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  font-size: 1.4rem;
+  margin: 10px;
+
+}
+
+.modalExit{
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+  text-align: right;
+}
+ 
+
+.modalHead{
+  grid-area: title;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  margin: 0px 10px;
+ 
+}
+
+
+.modalInfo{
+  grid-area: body;
+}
+
+.messageBtnDiv{
+  grid-area: message;
+  display: flex;
+  justify-content: center;
+  height: 4rem;
+
+}
+
+
+
+
+.modalImg{
+height: 120px;
+border-radius: 30px;
+margin-bottom: 0px;
+}
+
+.modalTitle{
+  display: inline;
+  font-size: 2.5rem;
+  margin-left: 1rem;
+  max-width: 600px;
+}
+
+.modalPay{
+color: #03599b;
+font-size: 1.5rem;
+margin-right: 10px;
+margin-left: 10px;
+margin-bottom: 0;
+}
+
+.modalShort{
+  margin-top: 2%;
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 1.5rem;
+}
+
+.modalDescription{
+  margin-top: 3.5%;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-align: center;  
+
+}
+ 
+.messageBtn{
+  padding: 10px 20px;
+  background-color: #1976d2;
+  color: white;
+  border-radius: 5px;
+  font-size: 15px;
+  width: 12rem;
+  border: none;
+
+}
+
+.messageBtn:hover{
+  cursor: pointer;
+}
+
+ .modalContainer{
+   position: fixed;
+  top: 0; bottom: 0; left: 0; right: 0; 
+   background-color: rgb(0, 0, 0, 0.5); 
+   padding-top: 15%; 
+
+}
+
+
+
+
+
+@media only screen and (max-width: 1000px) {
+
+.modalTitle{
+  font-size: 2rem;
+}
+
+.modalPay{
+  font-size: 1.2rem;
+}
+
+.modalShort{
+font-size: 1.2rem;
+}
+.modalDescription{
+  font-size: 1rem;
+}
+}
+
+
+
+@media only screen and (max-width: 900px) {
+
+.modalTitle{
+  font-size: 1.5rem;
+}
+
+.modalPay{
+  font-size: 1rem;
+}
+
+.modalShort{
+font-size: 0.9rem;
+}
+
+.modalDescription{
+  font-size: 0.9rem;
+}
+}

@@ -1,4 +1,4 @@
-import "./footer.css"
+import "./headerFooter.css"
 // import team from "../images/team.jpeg"
 
 export default function Footer(){

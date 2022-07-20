@@ -1,20 +1,19 @@
 /* CONTACT PAGE */
 
 .completeContact{
-  margin-top: 30px;
+ display: flex;
+ align-items: center;
+ align-content: center;
+ align-self: center;
+ justify-content: center;
   height: 50vh;
 background-color: rgba(0,0,0, 0.2);
-position: relative;
 }
 
 
 .contactContent{
-position: absolute;
-left: 50%;
-top: 33%;
-transform: translate(-50%, -50%);
 padding: 10px;
-height: 300px;
+height: 400px;
 width: 600px;
 }
 
@@ -79,6 +78,7 @@ margin-top: 50px;
   border-color: none;
 }
 
+
 /* ABOUT PAGE*/
 .completeAbout{
 display: grid;
@@ -86,12 +86,15 @@ height: 80vh;
 row-gap: 2rem;
 grid-template-areas:
 "title image"
-"content1 content2"
+"aboutLinks aboutLinks"
 ;
 grid-template-rows: 0.8fr 0.9fr;
 grid-template-columns: 1fr 1fr;
 }
 
+.aboutLinks{
+  grid-area: aboutLinks;
+}
 
 .titleTextAbout{
   grid-area: title;
@@ -103,7 +106,7 @@ grid-template-columns: 1fr 1fr;
 }
 
 .titleAbout{
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 3.5rem;
   margin-top: 3rem;
   font-family: sans-serif;
@@ -138,8 +141,6 @@ grid-template-columns: 1fr 1fr;
   justify-content: center;
   border-right: 2px white solid;
   background-color: rgba(0,0,0, 0.2);
-
-
 }
 
 .aboutContent2{
@@ -151,9 +152,9 @@ grid-template-columns: 1fr 1fr;
 }
 
 .madeWith{
-  color: white;
+  color: black;
   font-size: 3rem;
-
+  text-decoration: none;
 }
 
 .fa-react{
@@ -165,11 +166,115 @@ grid-template-columns: 1fr 1fr;
 
 .fa-github{
   font-size: 5rem;
-  color: white;
+  color: black;
   margin-left: 2rem;
 }
 
 .checkGit{
-    color: white;
+    color: black;
   font-size: 3rem;
+  text-decoration: none;
+}
+
+
+
+@media only screen and (max-width: 1700px) {
+  .completeAbout{
+display: grid;
+height: 100vh;
+row-gap: 1rem;
+grid-template-areas:
+"image"
+"title"
+"aboutLinks"
+
+;
+grid-template-rows: 0.8fr 0.5fr 1fr;
+grid-template-columns:1fr;
+margin-bottom: 50px;
+}
+
+.imageAbout{
+  margin-top: 2rem;
+  margin-right: 0;
+}
+
+
+.imageDivAbout{
+  justify-content: center;
+  margin-left: 0px;
+  margin-right: 0px;
+
+}
+
+.titleTextAbout{
+  justify-content: center;
+  margin-left: 0;
+}
+
+.titleAbout{
+  margin: 20px 0px
+}
+
+.aboutLinks{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.aboutContent1{
+display: flex;
+height: 100px;
+margin-bottom: 20px;
+}
+
+.aboutContent2{
+display: flex;
+height: 100px;
+margin-bottom: 40px;
+}
+
+.completeContact{
+  height: 60vh;
+}
+
+}
+
+@media only screen and (max-width: 900px) {
+/* 
+  .imageDivAbout{
+    margin-top: 50px;
+  } */
+  
+  .aboutContent1{
+display: flex;
+height: 100px;
+margin-bottom: 20px;
+}
+
+.aboutContent2{
+display: flex;
+height: 100px;
+margin-bottom: 80px;
+}
+
+.imageAbout{
+  margin-top: 60px;
+width: 540px;
+}
+
+.completeContact{
+  height: 60vh;
+}
+
+.checkGit{font-size: 2rem;}
+
+.madeWith{
+  font-size: 2rem;
+  text-align: center;
+}
+
+
+
+
 }

@@ -14,17 +14,16 @@ export default function About(){
       <div className='imageDivAbout'>
       <img className='imageAbout' src={team}></img>
       </div>
+     <div className='aboutLinks'> 
       <div className='aboutContent1'>        
-        <h3 className='checkGit'>Check our GitHub repo!</h3>
+        <a className='checkGit' href='https://github.com/Topgramming/GlobalJobsList' target="_blank">Check our GitHub repo!</a>
         <span className='githubIcon'>
-          <a href='https://github.com/' target="_blank"><i class="fab fa-github"></i></a>
+          <a href='https://github.com/' target="_blank"><i className="fab fa-github"></i></a>
         </span>        
       </div>
       <div className='aboutContent2'>
-        <h3 className='madeWith'>Made with React Js</h3>
-        <span className='reactIcon'>
-          <a href='https://reactjs.org/' target="_blank"><i class="fab fa-react"></i></a>
-        </span>
+        <a className='madeWith' href='https://reactjs.org/' target="_blank">Made with HTML, CSS, JAVASCRIPT AND REACT (ReactRouter, MUI)</a>
+      </div>
       </div>
     </div>
     <Footer/>
