@@ -43,7 +43,7 @@ const fieldStyles = {}
   return (
       <>
       {/* Outer Card */}
-<Card style={{maxWidth:550, margin:"0 auto", padding:"5rem 0px", backgroundColor: "transparent", boxShadow:"none"}}>
+<Card style={{maxWidth:550, margin:"0 auto", padding:"5rem 0px", backgroundColor: "transparent", boxShadow:"none",  height:"100vh"}}>
   <CardContent style={{ maxWidth:550 ,backgroundColor:"#0d6efd", borderRadius:"20px"}} >
 
     <Typography gutterBottom variant='h5' style={{fontFamily: "inter", color:"#ffffff", margin:"10px 5px", fontSize:"2rem", textAlign:"center", height:"50px"}}>Contact Us</Typography>
