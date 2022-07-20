@@ -56,7 +56,7 @@ font-size: 1.5rem;
 .footerMain{
     position: fixed;
     height: 50px;
-    background-image: linear-gradient(to right, #111a29, #1c3047);
+    background-image: linear-gradient(to right, #7a8791, #b8bcbd);
     bottom: 0px;
     left: 0px;
     right: 0px;
@@ -65,7 +65,7 @@ font-size: 1.5rem;
 }
 
 .footerTitle{
-  color: white;
+  color: black;
 }
 
 @media only screen and (max-width: 900px) {

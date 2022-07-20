@@ -106,7 +106,7 @@ grid-template-columns: 1fr 1fr;
 }
 
 .titleAbout{
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 3.5rem;
   margin-top: 3rem;
   font-family: sans-serif;
@@ -152,7 +152,7 @@ grid-template-columns: 1fr 1fr;
 }
 
 .madeWith{
-  color: white;
+  color: black;
   font-size: 3rem;
   text-decoration: none;
 }
@@ -166,12 +166,12 @@ grid-template-columns: 1fr 1fr;
 
 .fa-github{
   font-size: 5rem;
-  color: white;
+  color: black;
   margin-left: 2rem;
 }
 
 .checkGit{
-    color: white;
+    color: black;
   font-size: 3rem;
   text-decoration: none;
 }
@@ -192,7 +192,6 @@ grid-template-areas:
 grid-template-rows: 0.8fr 0.5fr 1fr;
 grid-template-columns:1fr;
 margin-bottom: 50px;
-
 }
 
 .imageAbout{
@@ -268,6 +267,12 @@ width: 540px;
   height: 60vh;
 }
 
+.checkGit{font-size: 2rem;}
+
+.madeWith{
+  font-size: 2rem;
+  text-align: center;
+}
 
 
 

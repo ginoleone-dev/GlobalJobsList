@@ -6,7 +6,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-    background-image: linear-gradient(to right, #141e30, #243b55);
+    background-image: linear-gradient(to right, #8e9eab, #eef2f3);
 }
 
 
@@ -47,7 +47,7 @@ body {
 .titleHire{
   margin-top: 2rem;
   margin-left: 125px;
-  color: white;
+  color: black;
 
 }
 
@@ -55,12 +55,12 @@ body {
 .parrHire{
   margin-top: 0.65rem;
   margin-left: 125px;
-  color: white;
+  color: black;
   font-size: 1.15rem;
 }
 
 .discover{
-  color: rgb(255, 255, 255);
+  color: rgb(67, 67, 67);
   font-weight: 600;
   font-size: inherit;
 }
@@ -84,7 +84,7 @@ body {
   margin-left: 100px;
   margin-bottom: 20px;
   align-items: center;
-  background-color: #dcdcdd;
+  background-color: #ffffff;
   box-shadow: 4px 4px 5px black;
   border-radius: 30px;
 }
@@ -126,7 +126,7 @@ color: #333d44;
  .openModalBtn{
   padding: 10px 20px;
   margin-left: 12px;
-  background-color: #4c5c68;
+  background-color: #1976d2;
   color: white;
   border-radius: 5px;
   font-size: 15px;
@@ -141,12 +141,12 @@ background-color: #2f3a41;
 
 .buttons{
   display: flex;
-  width: 600px;
+  width: 620px;
   height: 60px;
   overflow: auto;
   justify-content: center;
-  padding-top: 10px;
-  margin-top: 25px;
+  padding: 5px 0px;
+  margin-top: 20px;
   margin-left: 120px;
   border-radius: 20px;;
   background-color: #d8d8d8;
@@ -156,12 +156,11 @@ background-color: #2f3a41;
 .newButt{
   width: 90px;
   color: white;
-  background-color: #4c5c68;
+  background-color: #1976d2;
   border: none;
   border-radius: 5px;
   padding: 10px 5px;
-  margin-left: 4.5%;
-  margin-bottom: 6px;
+  margin: 3px 15px;
   
   cursor: pointer;
 }

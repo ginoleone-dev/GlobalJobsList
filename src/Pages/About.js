@@ -22,10 +22,7 @@ export default function About(){
         </span>        
       </div>
       <div className='aboutContent2'>
-        <a className='madeWith' href='https://reactjs.org/' target="_blank">Made with React Js</a>
-        <span className='reactIcon'>
-          <a href='https://reactjs.org/' target="_blank"><i className="fab fa-react"></i></a>
-        </span>
+        <a className='madeWith' href='https://reactjs.org/' target="_blank">Made with HTML, CSS, JAVASCRIPT AND REACT (ReactRouter, MUI)</a>
       </div>
       </div>
     </div>
