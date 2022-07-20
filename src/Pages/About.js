@@ -1,7 +1,6 @@
 import './Pages.css';
 import team from "../images/team.jpeg"
 import Footer from '../components/Footer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 export default function About(){
