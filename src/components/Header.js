@@ -33,9 +33,9 @@ const ResponsiveAppBar = () => {
 
   return (
       <ThemeProvider theme={customTheme}>
-    <AppBar position="static">
+    <AppBar position="static" style={{width:"100vw"}}>
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar disableGutters >
           <Typography
             variant="h6"
             noWrap

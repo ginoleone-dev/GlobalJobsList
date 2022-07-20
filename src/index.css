@@ -1,7 +1,15 @@
+
+#root{
+  width: 100%;
+  height: 100%;
+}
+
 *{
   margin: 0px;
 }
 body {
+  width: 100%;
+  height: 100%;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -21,16 +29,18 @@ body {
   ;
   grid-template-rows: 150px 1fr;
   grid-template-columns: 1fr 1fr;
+  margin-top: 40px;
+  margin-bottom: 0;
 }
 
 .textEmployee{
   grid-area: title;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .textEmployer{
   grid-area: title1;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .employee{
@@ -186,18 +196,15 @@ background-color: #2f3a41;
   "title1"
   "employer"
   ;
-  grid-template-rows: 0.1fr 0.7fr 0.1fr 0.7fr;
+  grid-template-rows: 0.3fr 0.7fr 0.1fr 0.7fr;
   grid-template-columns: 1fr;
   justify-content: center;
+  margin-top: 70px;
 }
 
-.textEmployee{
-  margin-top: 80px;
-  
-}
 
 .textEmployer{
-  margin-top: 0;
+  margin-top: 40px;
 }
 
 .content-container{
@@ -284,7 +291,6 @@ align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* margin-top: 90px; */
 }
 
 .buttons{
@@ -348,7 +354,29 @@ align-items: center;
 }
 }
 
-@media only screen and (max-width: 505px) {
+@media only screen and (max-width: 500px) {
+
+  .mainContainer{
+  display: grid;
+  grid-template-areas: 
+  "title"
+  "employee"
+  "title1"
+  "employer"
+  ;
+  grid-template-rows: 0.1fr 0.7fr 0.1fr 0.7fr;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  margin-top: 0px;
+}
+
+  .textEmployee{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-height: 200px;
+}
+
 
   .item-con{
     display: flex;
@@ -357,23 +385,16 @@ align-items: center;
 
 
   .listing-container{
-    width: 450px;
+    width: 380px;
 
   }
 
-  .textEmployee{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /* margin-top: 90px; */
-}
 
 .buttons{
-  width: 80%;
-  height: 60px;
-  overflow: hidden;
+  width: 100vw;
+  height: 50px;
   padding-top: 5px;
-  margin-top: 10px;
+
 
   border-radius: 20px;;
   background-color: #d8d8d8;
@@ -381,12 +402,20 @@ align-items: center;
 }
 
 .newButt{
-  width: 90px;
+  width: 70px;
+  height: 30px;
+  font-size: 0.6rem;
+
 }
 
 .openModalBtn{
-  width: 100px;
-  height: 60px;
+  width: 80px;
+  height: 50px;
   margin-right: 10px;
+  font-size: 0.7rem;
+}
+
+.employeeLabels{
+  font-size: 1rem;
 }
 }

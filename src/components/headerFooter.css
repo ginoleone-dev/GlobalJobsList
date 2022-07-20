@@ -72,9 +72,11 @@ font-size: 1.5rem;
 
   .navBar{
     position: fixed;
+    width: 100%;
   }
   .fa-bars {
     display: block;
+    width: 100%;
   }
 
   .mainNav {
