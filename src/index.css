@@ -7,6 +7,7 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
     background-image: linear-gradient(to right, #8e9eab, #eef2f3);
+    background-repeat: no-repeat;
 }
 
 
@@ -300,5 +301,48 @@ align-items: center;
 
 .newButt{
   width: 90px;
+}
+}
+
+@media only screen and (max-width: 700px) {
+
+  .item-con{
+    display: flex;
+    justify-content: center;
+  }
+
+
+  .listing-container{
+    width: 500px;
+
+  }
+
+  .textEmployee{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* margin-top: 90px; */
+}
+
+.buttons{
+  width: 80%;
+  height: 60px;
+  overflow: hidden;
+  padding-top: 5px;
+  margin-top: 10px;
+
+  border-radius: 20px;;
+  background-color: #d8d8d8;
+  box-shadow: 4px 4px 3px black;
+}
+
+.newButt{
+  width: 90px;
+}
+
+.openModalBtn{
+  width: 100px;
+  height: 60px;
+  margin-right: 10px;
 }
 }
