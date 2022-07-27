@@ -83,7 +83,7 @@ export default function Contact() {
       >
         <CardContent
           style={{
-            maxWidth: 550,
+            maxWidth: 450,
             backgroundColor: '#0d6efd',
             borderRadius: '20px',
           }}
@@ -200,7 +200,8 @@ export default function Contact() {
                 variant="contained"
                 align="center"
                 style={{
-                  backgroundColor: '#4c5c68',
+                  backgroundColor: '#edede9',
+                  color: '#000000',
                   borderRadius: '5px',
                   margin: '0 auto',
                   display: 'flex',
