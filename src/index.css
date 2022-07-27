@@ -1,92 +1,80 @@
-
-#root{
-  width: 100%;
-  height: 100%;
+#root {
+  overflow: hidden;
 }
 
-*{
+* {
   margin: 0px;
 }
 body {
-  width: 100%;
-  height: 100%;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-    background-image: linear-gradient(to right, #8e9eab, #eef2f3);
-    background-repeat: no-repeat;
+  background-image: linear-gradient(to right, #8e9eab, #eef2f3);
+  background-repeat: no-repeat;
 }
 
-
 /*Text below navbar  */
-.mainContainer{
+.mainContainer {
   display: grid;
   height: auto;
-  grid-template-areas: 
-  "title title1"
-  "employee employer"
-  ;
+  grid-template-areas:
+    'title title1'
+    'employee employer';
   grid-template-rows: 150px 1fr;
   grid-template-columns: 1fr 1fr;
   margin-top: 40px;
   margin-bottom: 0;
 }
 
-.textEmployee{
+.textEmployee {
   grid-area: title;
   margin-top: 30px;
 }
 
-.textEmployer{
+.textEmployer {
   grid-area: title1;
   margin-top: 30px;
 }
 
-.employee{
+.employee {
   grid-area: employee;
   margin-bottom: 80px;
 }
 
-.employer{
-  grid-area: employer; 
-    margin-bottom: 80px;
+.employer {
+  grid-area: employer;
+  margin-bottom: 80px;
 }
 
-
-
-.titleHire{
+.titleHire {
   margin-top: 2rem;
   margin-left: 125px;
   color: black;
-
 }
 
-
-.parrHire{
+.parrHire {
   margin-top: 0.65rem;
   margin-left: 125px;
   color: black;
   font-size: 1.15rem;
 }
 
-.discover{
+.discover {
   color: rgb(67, 67, 67);
   font-weight: 600;
   font-size: inherit;
 }
 /* Text below navbar */
 
-
-
-.listingEmployer{
+.listingEmployer {
   grid-area: main;
 }
-.filterBtnEmployer{
+.filterBtnEmployer {
   grid-area: buttons;
 }
 
-.listing-container{
+.listing-container {
   display: flex;
   justify-content: center;
   width: 650px;
@@ -100,7 +88,7 @@ body {
   border-radius: 30px;
 }
 
-.profilePhoto{
+.profilePhoto {
   height: 100px;
   max-width: 100px;
   border-radius: 40px;
@@ -109,32 +97,29 @@ body {
   box-shadow: 2.5px 2.5px 8px black;
 }
 
-.listing-mainbox{
-margin-left: 0px;
-width: 280px;
-
+.listing-mainbox {
+  margin-left: 0px;
+  width: 280px;
 }
 
-.employeeLabels{
-margin-top: 10px;
-font-size: 20px;
-color: #333d44;
+.employeeLabels {
+  margin-top: 10px;
+  font-size: 20px;
+  color: #333d44;
 }
 
-
-.fieldAtOrg{
-    cursor: pointer;
-    font-size: 1.4rem;
-    color: #03599b;
-    border-radius: 15px;
+.fieldAtOrg {
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: #03599b;
+  border-radius: 15px;
 }
 
-.fieldAtOrg:hover{
+.fieldAtOrg:hover {
   color: #033a64;
   text-decoration: underline;
-  
 }
- .openModalBtn{
+.openModalBtn {
   padding: 10px 20px;
   margin-left: 12px;
   background-color: #1976d2;
@@ -142,15 +127,13 @@ color: #333d44;
   border-radius: 5px;
   font-size: 15px;
   border: none;
-  
 }
 
-.openModalBtn:active{
-background-color: #2f3a41;
+.openModalBtn:active {
+  background-color: #2f3a41;
 }
 
-
-.buttons{
+.buttons {
   display: flex;
   width: 620px;
   height: 60px;
@@ -159,12 +142,12 @@ background-color: #2f3a41;
   padding: 5px 0px;
   margin-top: 20px;
   margin-left: 120px;
-  border-radius: 20px;;
+  border-radius: 20px;
   background-color: #d8d8d8;
   box-shadow: 4px 4px 3px black;
 }
 
-.newButt{
+.newButt {
   width: 90px;
   color: white;
   background-color: #1976d2;
@@ -172,250 +155,233 @@ background-color: #2f3a41;
   border-radius: 5px;
   padding: 10px 5px;
   margin: 3px 15px;
-  
+
   cursor: pointer;
 }
 
-.newButt:active{
+.newButt:active {
   background-color: #2f3a41;
-
 }
 
-.item-con{
+.item-con {
   width: 650px;
 }
 
-
 @media only screen and (max-width: 1400px) {
-  .mainContainer{
-  display: grid;
-  height: auto;
-  grid-template-areas: 
-  "title"
-  "employee"
-  "title1"
-  "employer"
-  ;
-  grid-template-rows: 0.3fr 0.7fr 0.1fr 0.7fr;
-  grid-template-columns: 1fr;
-  justify-content: center;
-  margin-top: 70px;
-}
+  .mainContainer {
+    display: grid;
+    height: auto;
+    grid-template-areas:
+      'title'
+      'employee'
+      'title1'
+      'employer';
+    grid-template-rows: 0.3fr 0.7fr 0.1fr 0.7fr;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    margin-top: 70px;
+  }
 
+  .textEmployer {
+    margin-top: 40px;
+  }
 
-.textEmployer{
-  margin-top: 40px;
-}
-
-.content-container{
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-}
-
-.listing-container{
-  margin: 20px 0px;
-}
-
-.filterBtnEmployee{
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-}
-
-.filterBtnEmployer{
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-}
-
-.buttons{
-  margin: 0;
-}
-
-.textEmployee{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0;
-}
-
-.textEmployer{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0;
-}
-
-.titleHire{
+  .content-container {
     display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  margin-top: 20px;
-}
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-.parrHire{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  margin-top: 20px;
-}
+  .listing-container {
+    margin: 20px 0px;
+  }
+
+  .filterBtnEmployee {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .filterBtnEmployer {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .buttons {
+    margin: 0;
+  }
+
+  .textEmployee {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .textEmployer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .titleHire {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-top: 20px;
+  }
+
+  .parrHire {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-top: 20px;
+  }
 }
 
 @media only screen and (max-width: 1700px) {
+  .buttons {
+    width: 600px;
+    height: 60px;
+    overflow: auto;
+    padding-top: 10px;
+    margin-top: 10px;
 
-.buttons{
-  width: 600px;
-  height: 60px;
-  overflow: auto;
-  padding-top: 10px;
-  margin-top: 10px;
+    border-radius: 20px;
+    background-color: #d8d8d8;
+    box-shadow: 4px 4px 3px black;
+  }
 
-  border-radius: 20px;;
-  background-color: #d8d8d8;
-  box-shadow: 4px 4px 3px black;
-}
-
-.newButt{
-  width: 90px;
-}
+  .newButt {
+    width: 90px;
+  }
 }
 
 @media only screen and (max-width: 900px) {
-  .textEmployee{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+  .textEmployee {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-.buttons{
-  width: 600px;
-  height: 60px;
-  overflow: auto;
-  padding-top: 5px;
-  margin-top: 10px;
+  .buttons {
+    width: 600px;
+    height: 60px;
+    overflow: auto;
+    padding-top: 5px;
+    margin-top: 10px;
 
-  border-radius: 20px;;
-  background-color: #d8d8d8;
-  box-shadow: 4px 4px 3px black;
-}
+    border-radius: 20px;
+    background-color: #d8d8d8;
+    box-shadow: 4px 4px 3px black;
+  }
 
-.newButt{
-  width: 90px;
+  .newButt {
+    width: 90px;
+  }
 }
-}
-
 
 @media only screen and (max-width: 700px) {
-
-  .item-con{
+  .item-con {
     display: flex;
     justify-content: center;
   }
 
-
-  .listing-container{
+  .listing-container {
     width: 500px;
-
   }
 
-  .textEmployee{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /* margin-top: 90px; */
-}
+  .textEmployee {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* margin-top: 90px; */
+  }
 
-.buttons{
-  width: 80%;
-  height: 60px;
-  overflow: hidden;
-  padding-top: 5px;
-  margin-top: 10px;
+  .buttons {
+    width: 80%;
+    height: 60px;
+    overflow: hidden;
+    padding-top: 5px;
+    margin-top: 10px;
 
-  border-radius: 20px;;
-  background-color: #d8d8d8;
-  box-shadow: 4px 4px 3px black;
-}
+    border-radius: 20px;
+    background-color: #d8d8d8;
+    box-shadow: 4px 4px 3px black;
+  }
 
-.newButt{
-  width: 90px;
-}
+  .newButt {
+    width: 90px;
+  }
 
-.openModalBtn{
-  width: 100px;
-  height: 60px;
-  margin-right: 10px;
-}
+  .openModalBtn {
+    width: 100px;
+    height: 60px;
+    margin-right: 10px;
+  }
 }
 
 @media only screen and (max-width: 500px) {
+  .mainContainer {
+    display: grid;
+    grid-template-areas:
+      'title'
+      'employee'
+      'title1'
+      'employer';
+    grid-template-rows: 0.1fr 0.7fr 0.1fr 0.7fr;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    margin-top: 0px;
+  }
 
-  .mainContainer{
-  display: grid;
-  grid-template-areas: 
-  "title"
-  "employee"
-  "title1"
-  "employer"
-  ;
-  grid-template-rows: 0.1fr 0.7fr 0.1fr 0.7fr;
-  grid-template-columns: 1fr;
-  justify-content: center;
-  margin-top: 0px;
-}
+  .textEmployee {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: 200px;
+  }
 
-  .textEmployee{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-height: 200px;
-}
-
-
-  .item-con{
+  .item-con {
     display: flex;
     justify-content: center;
   }
 
-
-  .listing-container{
+  .listing-container {
     width: 380px;
-
   }
 
+  .buttons {
+    width: 100vw;
+    height: 50px;
+    padding-top: 5px;
 
-.buttons{
-  width: 100vw;
-  height: 50px;
-  padding-top: 5px;
+    border-radius: 20px;
+    background-color: #d8d8d8;
+    box-shadow: 4px 4px 3px black;
+  }
 
+  .newButt {
+    width: 70px;
+    height: 30px;
+    font-size: 0.6rem;
+  }
 
-  border-radius: 20px;;
-  background-color: #d8d8d8;
-  box-shadow: 4px 4px 3px black;
-}
+  .openModalBtn {
+    width: 80px;
+    height: 50px;
+    margin-right: 10px;
+    font-size: 0.7rem;
+  }
 
-.newButt{
-  width: 70px;
-  height: 30px;
-  font-size: 0.6rem;
-
-}
-
-.openModalBtn{
-  width: 80px;
-  height: 50px;
-  margin-right: 10px;
-  font-size: 0.7rem;
-}
-
-.employeeLabels{
-  font-size: 1rem;
-}
+  .employeeLabels {
+    font-size: 1rem;
+  }
 }
