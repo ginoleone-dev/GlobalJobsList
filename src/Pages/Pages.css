@@ -1,70 +1,63 @@
 /* CONTACT PAGE */
 
-.completeContact{
- display: flex;
- align-items: center;
- align-content: center;
- align-self: center;
- justify-content: center;
+.completeContact {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  justify-content: center;
   height: 50vh;
-background-color: rgba(0,0,0, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
-
-.contactContent{
-padding: 10px;
-height: 400px;
-width: 600px;
+.contactContent {
+  padding: 10px;
+  height: 400px;
+  width: 600px;
 }
 
-.insideContactContent{
+.insideContactContent {
   text-align: center;
   margin-top: 1.5rem;
 }
 
-
-
-.contactTitle{
+.contactTitle {
   color: white;
   font-size: 3.5rem;
-  font-family: sans-serif ;
+  font-family: sans-serif;
 }
 
-.contactTitle2{
+.contactTitle2 {
   color: white;
   font-size: 1.5rem;
   font-weight: 250;
 }
 
-.contactTitle3{
+.contactTitle3 {
   color: white;
   font-size: 1.1rem;
   font-weight: 250;
 }
 
-
-.contactButton{
+.contactButton {
   background-color: black;
   color: white;
-box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0.8rem 1.6rem;
   border-radius: 5px;
   cursor: pointer;
-  
 }
 
-.btnContactDiv{
+.btnContactDiv {
   text-align: center;
   margin-top: 2.2rem;
 }
 
-.aboutInputDiv{
-margin-top: 50px;
-
-
+.aboutInputDiv {
+  margin-top: 50px;
 }
 
-.contactInputField{
+.contactInputField {
   margin-left: 15px;
   display: block;
   text-align: center;
@@ -73,300 +66,299 @@ margin-top: 50px;
   border-radius: 20px;
 }
 
-.contactInputField::after{
+.contactInputField::after {
   border-style: none;
   border-color: none;
 }
 
-
 /* ABOUT PAGE*/
-.completeAbout{
-display: grid;
-height: 80vh;
-row-gap: 2rem;
-grid-template-areas:
-"title image"
-"aboutLinks aboutLinks"
-;
-grid-template-rows: 0.8fr 0.9fr;
-grid-template-columns: 1fr 1fr;
-margin-top: 70px;
+.completeAbout {
+  display: grid;
+  height: 80vh;
+  row-gap: 2rem;
+  grid-template-areas:
+    'title image'
+    'aboutLinks aboutLinks';
+  grid-template-rows: 0.8fr 0.9fr;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 70px;
 }
 
-.aboutLinks{
+.aboutLinks {
   grid-area: aboutLinks;
 }
 
-.titleTextAbout{
+.titleTextAbout {
   grid-area: title;
   display: flex;
   align-items: center;
   margin-left: 150px;
-  
-
 }
 
-.titleAbout{
+.titleAbout {
   color: rgb(0, 0, 0);
   font-size: 3.5rem;
   margin-top: 3rem;
   font-family: sans-serif;
   text-align: center;
   width: 700px;
-
 }
 
-.blueText{
+.blueText {
   color: rgb(94, 94, 230);
   text-shadow: 2px 2px black;
 }
 
-.imageDivAbout{
+.imageDivAbout {
   grid-area: image;
   display: flex;
   align-items: center;
   margin-left: 150px;
 }
 
-.imageAbout{
+.imageAbout {
   width: 700px;
   border-radius: 30px;
   margin-top: 3rem;
   margin-right: 3rem;
 }
 
-.aboutContent1{
+.aboutContent1 {
   display: flex;
   align-items: center;
   align-content: center;
   justify-content: center;
   border-right: 2px white solid;
-  background-color: rgba(0,0,0, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
-.aboutContent2{
+.aboutContent2 {
   display: flex;
   align-items: center;
   align-content: center;
   justify-content: center;
-  background-color: rgba(0,0,0, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
-.madeWith{
+.madeWith {
   color: black;
   font-size: 3rem;
   text-decoration: none;
 }
 
-.fa-react{
+.fa-react {
   font-size: 5rem;
   color: white;
   margin-left: 2rem;
 }
 
-
-.fa-github{
+.fa-github {
   font-size: 5rem;
   color: black;
   margin-left: 2rem;
 }
 
-.checkGit{
-    color: black;
+.checkGit {
+  color: black;
   font-size: 3rem;
   text-decoration: none;
 }
 
-
-
 @media only screen and (max-width: 1700px) {
-  .completeAbout{
-display: grid;
-height: 100vh;
-row-gap: 1rem;
-grid-template-areas:
-"image"
-"title"
-"aboutLinks"
+  .completeAbout {
+    display: grid;
+    height: 100vh;
+    row-gap: 1rem;
+    grid-template-areas:
+      'image'
+      'title'
+      'aboutLinks';
+    grid-template-rows: 0.8fr 0.5fr 1fr;
+    grid-template-columns: 1fr;
+    margin-bottom: 50px;
+  }
 
-;
-grid-template-rows: 0.8fr 0.5fr 1fr;
-grid-template-columns:1fr;
-margin-bottom: 50px;
-}
+  .imageAbout {
+    margin-top: 2rem;
+    margin-right: 0;
+  }
 
-.imageAbout{
-  margin-top: 2rem;
-  margin-right: 0;
-}
+  .imageDivAbout {
+    justify-content: center;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 
+  .titleTextAbout {
+    justify-content: center;
+    margin-left: 0;
+  }
 
-.imageDivAbout{
-  justify-content: center;
-  margin-left: 0px;
-  margin-right: 0px;
+  .titleAbout {
+    margin: 20px 0px;
+  }
 
-}
+  .aboutLinks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-.titleTextAbout{
-  justify-content: center;
-  margin-left: 0;
-}
+  .aboutContent1 {
+    display: flex;
+    height: 100px;
+    margin-bottom: 20px;
+  }
 
-.titleAbout{
-  margin: 20px 0px
-}
+  .aboutContent2 {
+    display: flex;
+    height: 100px;
+    margin-bottom: 40px;
+  }
 
-.aboutLinks{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.aboutContent1{
-display: flex;
-height: 100px;
-margin-bottom: 20px;
-}
-
-.aboutContent2{
-display: flex;
-height: 100px;
-margin-bottom: 40px;
-}
-
-.completeContact{
-  height: 60vh;
-}
-
+  .completeContact {
+    height: 60vh;
+  }
 }
 
 @media only screen and (max-width: 900px) {
-/* 
+  /* 
   .imageDivAbout{
     margin-top: 50px;
   } */
-  
-  .aboutContent1{
-display: flex;
-height: 100px;
-margin-bottom: 20px;
-}
 
-.aboutContent2{
-display: flex;
-height: 100px;
-margin-bottom: 80px;
-}
+  .aboutContent1 {
+    display: flex;
+    height: 100px;
+    margin-bottom: 20px;
+  }
 
-.imageAbout{
-  margin-top: 60px;
-width: 540px;
-}
+  .aboutContent2 {
+    display: flex;
+    height: 100px;
+    margin-bottom: 80px;
+  }
 
-.completeContact{
-  height: 60vh;
-}
+  .imageAbout {
+    margin-top: 60px;
+    width: 540px;
+  }
 
-.checkGit{font-size: 2rem;}
+  .completeContact {
+    height: 60vh;
+  }
 
-.madeWith{
-  font-size: 2rem;
-  text-align: center;
-}
+  .checkGit {
+    font-size: 2rem;
+  }
 
+  .madeWith {
+    font-size: 2rem;
+    text-align: center;
+  }
 }
 
 @media only screen and (max-width: 700px) {
+  .aboutContent1 {
+    display: flex;
+    height: 100px;
+    margin-bottom: 20px;
+  }
 
-.aboutContent1{
-display: flex;
-height: 100px;
-margin-bottom: 20px;
-}
+  .aboutContent2 {
+    display: flex;
+    height: 80px;
+    margin-bottom: 80px;
+  }
 
-.aboutContent2{
-display: flex;
-height: 80px;
-margin-bottom: 80px;
-}
+  .imageAbout {
+    margin-top: 20px;
+    width: 500px;
+  }
 
-.imageAbout{
-  margin-top: 20px;
-width: 500px;
-}
+  .titleAbout {
+    width: 80%;
+    font-size: 2.5rem;
+  }
 
-.titleAbout{
-  width: 80%;
-  font-size: 2.5rem;
-}
+  .aboutLinks {
+    margin-top: -30px;
+  }
+  .aboutContent1 {
+    width: 100%;
+    height: 120px;
+  }
 
-.aboutLinks{
-margin-top: -30px;
-}
-.aboutContent1{
-  width: 100%;
-  height: 120px;}
+  .aboutContent2 {
+    height: 120px;
+  }
 
-.aboutContent2{height: 120px;}
+  .completeContact {
+    height: 60vh;
+  }
 
-.completeContact{
-  height: 60vh;
-}
+  .checkGit {
+    font-size: 2rem;
+  }
 
-.checkGit{font-size: 2rem;}
-
-.madeWith{
-  font-size: 1.5rem;
-  text-align: center;
-}
-
+  .madeWith {
+    font-size: 1.5rem;
+    text-align: center;
+  }
 }
 
 @media only screen and (max-width: 505px) {
+  .aboutContent1 {
+    display: flex;
+    height: 100px;
+    margin-bottom: 20px;
+  }
 
-  .aboutContent1{
-display: flex;
-height: 100px;
-margin-bottom: 20px;
+  .aboutContent2 {
+    display: flex;
+    height: 80px;
+    margin-bottom: 80px;
+  }
+
+  .imageAbout {
+    margin-top: 20px;
+    width: 400px;
+  }
+
+  .titleAbout {
+    width: 85%;
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .aboutLinks {
+    margin-top: -30px;
+  }
+  .aboutContent1 {
+    width: 100%;
+    height: 120px;
+  }
+
+  .aboutContent2 {
+    height: 120px;
+  }
+
+  .completeContact {
+    height: 60vh;
+  }
+
+  .checkGit {
+    font-size: 2rem;
+  }
+
+  .madeWith {
+    font-size: 1.3rem;
+    text-align: center;
+  }
 }
 
-.aboutContent2{
-display: flex;
-height: 80px;
-margin-bottom: 80px;
+@media only screen and (max-width: 465px) {
+  .checkGit {
+    text-align: center;
+  }
 }
-
-.imageAbout{
-  margin-top: 20px;
-width: 400px;
-}
-
-.titleAbout{
-  width: 85%;
-  font-size: 2.5rem;
-  text-align: center ;
-}
-
-.aboutLinks{
-margin-top: -30px;
-}
-.aboutContent1{
-  width: 100%;
-  height: 120px;}
-
-.aboutContent2{height: 120px;}
-
-.completeContact{
-  height: 60vh;
-}
-
-.checkGit{font-size: 2rem;}
-
-.madeWith{
-  font-size: 1.3rem;
-  text-align: center;
-}
-
-}
-
