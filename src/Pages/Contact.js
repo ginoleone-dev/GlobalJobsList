@@ -11,14 +11,7 @@ import {
 } from '@mui/material';
 import './Pages.css';
 import { db } from '../firebase-config';
-import {
-  collection,
-  getDocs,
-  addDoc,
-  updateDoc,
-  doc,
-  deleteDoc,
-} from 'firebase/firestore';
+import { collection, getDocs, addDoc } from 'firebase/firestore';
 
 const textAreaStyle = {
   position: 'absolute',
@@ -50,7 +43,15 @@ export default function Contact() {
     getUsers();
   }, []);
 
-  // Create a contact
+  // Set fields blank
+  const blankFields = () => {
+    setFirstName('');
+    setLastName('');
+    setEmail('');
+    setMessage('');
+  };
+
+  // Create a contact and clear the fields after (maybe should be separate)
   const createContact = async () => {
     await addDoc(contactsCollectionRef, {
       firstName: firstName,
@@ -58,16 +59,9 @@ export default function Contact() {
       email: email,
       message: message,
     });
-    setFirstName('');
-    setLastName('');
-    setEmail('');
-    setMessage('');
+    blankFields();
   };
 
-  // const emptyFields = () => {
-  //   setFirstName('');
-  //   setLastName('');
-  // };
   return (
     <>
       {/* Outer Card */}
@@ -112,10 +106,11 @@ export default function Contact() {
             }}
           >
             I would like to know any possible improvement that you can think of!
+            - Made with MaterialUI
           </Typography>
 
           {/* Outer Grid */}
-          <Grid container spacing={1}>
+          <Grid container spacing={1.5}>
             <Grid xs={12} sm={6} item>
               <TextField
                 label="First Name"
@@ -128,7 +123,6 @@ export default function Contact() {
                 style={{
                   backgroundColor: '#edede9',
                   borderRadius: 12,
-                  marginBottom: 15,
                 }}
                 fullWidth
                 required

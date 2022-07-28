@@ -1,50 +1,60 @@
-import React, {useState} from "react";
-import data from "../data"
-import Buttons from "./Buttons";
-import EmployeeMenu from "./EmployeeMenu";
-import EmployerMenu from "./EmployerMenu";
-import Footer from "./Footer";
+import React, { useState } from 'react';
+import data from '../data';
+import Buttons from './Buttons';
+import EmployeeMenu from './EmployeeMenu';
+import EmployerMenu from './EmployerMenu';
+import Footer from './Footer';
 
-export default function Main(){
-const employeeData = data.employee;
-const employerData = data.employers;
+export default function Main() {
+  const employeeData = data.employee;
+  const employerData = data.employers;
 
   // List of Categories for
-  const allEmployeeCategories = ['All', ...new Set(employeeData.map(item => item.field))];
-  const allEmployerCategories = ['All', ...new Set(employerData.map(item => item.field))]
+  const allEmployeeCategories = [
+    'All',
+    ...new Set(employeeData.map((item) => item.field)),
+  ];
+  const allEmployerCategories = [
+    'All',
+    ...new Set(employerData.map((item) => item.field)),
+  ];
 
   const [menuItemEmployee, setMenuItemEmployee] = useState(employeeData);
   const [buttonsEmployee, setButtonsEmployee] = useState(allEmployeeCategories);
 
   const [menuItemEmployer, setMenuItemEmployer] = useState(employerData);
-  const [buttonsEmployer, setButtonsEmployer] = useState(allEmployerCategories);  
+  const [buttonsEmployer, setButtonsEmployer] = useState(allEmployerCategories);
 
-// Filter employee list according to the button clicked
-  const filterEmployee = (inputtedField) =>{
+  // Filter employee list according to the button clicked
+  const filterEmployee = (inputtedField) => {
     // Checking first if 'All' button was clicked
-    if(inputtedField === 'All'){
+    if (inputtedField === 'All') {
       setMenuItemEmployee(employeeData);
       console.log(inputtedField);
       return;
     }
-    const filteredData = employeeData.filter(dat => dat.field == inputtedField );
-    setMenuItemEmployee(filteredData)
+    const filteredData = employeeData.filter(
+      (dat) => dat.field == inputtedField
+    );
+    setMenuItemEmployee(filteredData);
     console.log(inputtedField);
-  }
+  };
 
-  const filterEmployer = (inputtedField) =>{
+  const filterEmployer = (inputtedField) => {
     // Checking first if 'All' button was clicked
-    if(inputtedField === 'All'){
+    if (inputtedField === 'All') {
       setMenuItemEmployer(employerData);
       console.log(inputtedField);
       return;
     }
-    const filteredData = employerData.filter(dat => dat.field == inputtedField );
-    setMenuItemEmployer(filteredData)
+    const filteredData = employerData.filter(
+      (dat) => dat.field == inputtedField
+    );
+    setMenuItemEmployer(filteredData);
     console.log(inputtedField);
-  }
-  return(
-  <>
+  };
+  return (
+    <>
       <div className="mainContainer">
         <div className="textEmployee">
           <h1 className="titleHire">Looking to hire someone?</h1>
@@ -52,26 +62,32 @@ const employerData = data.employers;
         </div>
         <div className="textEmployer">
           <h1 className="titleHire">Looking for a job?</h1>
-          <p className="parrHire"><span className="discover">Discover</span> your next big opportunity. </p>
-        </div> 
+          <p className="parrHire">
+            <span className="discover">Discover</span> your next big
+            opportunity.{' '}
+          </p>
+        </div>
         <div className="employee">
+          <h3 className="titleQuestion">
+            What profession are you looking for?
+          </h3>
           <div className="filterBtnEmployee">
-             <Buttons button={buttonsEmployee} filter={filterEmployee}/>
+            <Buttons button={buttonsEmployee} filter={filterEmployee} />
           </div>
           <div className="listingEmployee">
-             <EmployeeMenu menuItem={menuItemEmployee}/>
+            <EmployeeMenu menuItem={menuItemEmployee} />
           </div>
         </div>
-       <div className="employer">
-      <div className="filterBtnEmployer">
-        <Buttons button={buttonsEmployer} filter={filterEmployer}/>
+        <div className="employer">
+          <div className="filterBtnEmployer">
+            <Buttons button={buttonsEmployer} filter={filterEmployer} />
+          </div>
+          <div className="listingEmployer">
+            <EmployerMenu menuItem={menuItemEmployer} />
+          </div>
+        </div>
       </div>
-      <div className="listingEmployer">
-          <EmployerMenu menuItem={menuItemEmployer}/>
-      </div>
-    </div>
-      </div>
-      <Footer/>
-      </>
-  )
+      <Footer />
+    </>
+  );
 }
