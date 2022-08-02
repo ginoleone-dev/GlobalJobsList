@@ -86,6 +86,7 @@ export default function Main() {
           </div>
         </div>
       </div>
+      <div className="comingSoon"></div>
       <Footer />
     </>
   );
