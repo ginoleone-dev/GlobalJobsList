@@ -1,0 +1,48 @@
+.mainPost {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 3%;
+}
+
+.postTitle {
+}
+
+.postButton {
+  padding: 10px 20px;
+  background-color: #1976d2;
+  color: white;
+  border-radius: 5px;
+  font-size: 15px;
+  border: none;
+}
+
+.mainModal {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(0, 0, 0, 0.5);
+  padding-top: 8%;
+}
+
+.modalBdy {
+  position: fixed;
+  width: 1000px;
+  height: 1000px;
+  background-color: aliceblue;
+}
+
+.modalContent {
+  display: flex;
+  justify-content: center;
+  background-color: aliceblue;
+  height: 600px;
+  width: 700px;
+  z-index: 0;
+}

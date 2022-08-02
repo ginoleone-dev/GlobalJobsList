@@ -4,6 +4,7 @@ import Buttons from './Buttons';
 import EmployeeMenu from './EmployeeMenu';
 import EmployerMenu from './EmployerMenu';
 import Footer from './Footer';
+import Post from './Post';
 
 export default function Main() {
   const employeeData = data.employee;
@@ -55,6 +56,7 @@ export default function Main() {
   };
   return (
     <>
+      {/* <Post /> */}
       <div className="mainContainer">
         <div className="textEmployee">
           <h1 className="titleHire">Looking to hire someone?</h1>
@@ -68,9 +70,6 @@ export default function Main() {
           </p>
         </div>
         <div className="employee">
-          <h3 className="titleQuestion">
-            What profession are you looking for?
-          </h3>
           <div className="filterBtnEmployee">
             <Buttons button={buttonsEmployee} filter={filterEmployee} />
           </div>

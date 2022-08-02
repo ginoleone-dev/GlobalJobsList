@@ -40,11 +40,13 @@ body {
 .employee {
   grid-area: employee;
   margin-bottom: 80px;
+  margin-top: 20px;
 }
 
 .employer {
   grid-area: employer;
   margin-bottom: 80px;
+  margin-top: 20px;
 }
 
 .titleHire {
@@ -142,10 +144,10 @@ body {
   display: flex;
   width: 620px;
   height: 60px;
-  overflow: auto;
+  overflow: hidden;
   justify-content: space-around;
   padding: 5px 0px;
-  margin-top: 0px;
+  margin-top: 30px;
   margin-left: 120px;
   border-radius: 20px;
 }
@@ -256,7 +258,7 @@ body {
     /* margin-left: 0px; */
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: flex-end;
     width: 280px;
   }
 
@@ -274,7 +276,6 @@ body {
   .buttons {
     width: 650px;
     height: 76px;
-    overflow: auto;
     padding: 10px 20px;
     margin-top: -5px;
 
@@ -338,7 +339,7 @@ body {
   .buttons {
     width: 600px;
     height: 60px;
-    overflow: auto;
+    overflow: hidden;
     padding-top: 5px;
     margin-top: 10px;
 
@@ -384,7 +385,7 @@ body {
     width: 100vw;
     height: 50px;
     padding-top: 5px;
-
+    margin-top: -20px;
     border-radius: 20px;
   }
 

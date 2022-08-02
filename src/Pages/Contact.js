@@ -8,20 +8,34 @@ import {
   Grid,
   TextField,
   Typography,
+  Modal,
+  Box,
 } from '@mui/material';
 import './Pages.css';
 import { db } from '../firebase-config';
 import { collection, getDocs, addDoc } from 'firebase/firestore';
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 500,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 2,
+};
 
 const textAreaStyle = {
   position: 'absolute',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
+  width: 500,
   bgcolor: 'background.paper',
   border: '2px solid #000',
-  marginTop: -50,
+  // marginTop: -50,
   boxShadow: 24,
   p: 4,
 };
@@ -38,7 +52,6 @@ export default function Contact() {
   useEffect(() => {
     const getUsers = async () => {
       const data = await getDocs(contactsCollectionRef);
-      console.log(data.docs);
     };
     getUsers();
   }, []);
@@ -51,23 +64,68 @@ export default function Contact() {
     setMessage('');
   };
 
+  // Modal
+
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   // Create a contact and clear the fields after (maybe should be separate)
   const createContact = async () => {
+    blankFields();
     await addDoc(contactsCollectionRef, {
       firstName: firstName,
       lastName: lastName,
       email: email,
       message: message,
     });
-    blankFields();
   };
 
   return (
     <>
+      {open && (
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              Success!
+            </Typography>
+            <Typography id="modal-modal-description" sx={{ mt: 2, mb: 3 }}>
+              Thank you for contacting us, we appreciate your feedback. This
+              information will arrive at our Firebase Database
+            </Typography>
+            <Button
+              variant="contained"
+              align="center"
+              color="primary"
+              style={{
+                color: '#ffffff',
+                borderRadius: '5px',
+                margin: '10px auto',
+                display: 'flex',
+                height: 50,
+                width: 160,
+              }}
+              onClick={() => {
+                handleClose();
+              }}
+              fullWidth
+            >
+              Close
+            </Button>
+          </Box>
+        </Modal>
+      )}
       {/* Outer Card */}
       <Card
         style={{
-          maxWidth: 550,
+          maxWidth: 600,
           margin: '0 auto',
           padding: '5rem 0px',
           backgroundColor: 'transparent',
@@ -77,7 +135,7 @@ export default function Contact() {
       >
         <CardContent
           style={{
-            maxWidth: 450,
+            maxWidth: 600,
             backgroundColor: '#0d6efd',
             borderRadius: '20px',
           }}
@@ -110,7 +168,7 @@ export default function Contact() {
           </Typography>
 
           {/* Outer Grid */}
-          <Grid container spacing={1.5}>
+          <Grid container spacing={2}>
             <Grid xs={12} sm={6} item>
               <TextField
                 label="First Name"
@@ -141,7 +199,6 @@ export default function Contact() {
                 style={{
                   backgroundColor: '#edede9',
                   borderRadius: 12,
-                  marginBottom: 15,
                 }}
                 fullWidth
                 required
@@ -161,7 +218,6 @@ export default function Contact() {
                 style={{
                   backgroundColor: '#edede9',
                   borderRadius: 12,
-                  marginBottom: 15,
                 }}
                 fullWidth
                 required
@@ -182,7 +238,6 @@ export default function Contact() {
                 style={{
                   backgroundColor: '#edede9',
                   borderRadius: 12,
-                  marginBottom: 15,
                 }}
                 variant="filled"
                 fullWidth
@@ -204,6 +259,7 @@ export default function Contact() {
                 }}
                 onClick={() => {
                   createContact();
+                  handleOpen();
                 }}
                 fullWidth
               >

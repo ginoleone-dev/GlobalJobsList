@@ -1,107 +1,109 @@
-
-
 export default {
-"employee":
-[
- {  
-  id: 1,
-  title:"Medical Doctor",
-  firstName: "Brian",
-  lastName: "Cranston",
-  field: "Medical",
-  location: "Mexico",
-  payRate: "$20/h",
-  description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at condimentum magna. Phasellus iaculis fermentum felis, id molestie quam. Vestibulum.",
-  previous: "Hospita Central de México",
-  imageUrl: "../images/guy1.jpg",
- },
- {
-  id: 2,
-  title: "Marketing Manager",
-  firstName: "Shonda",
-  lastName: "Rhymes",
-  field: "Marketing",
-  location: "Costa Rica",
-  payRate: "$25/h",
- description:"I'm a graphic designer with over 25 years of experience in the design world, helping businesses and individuals promote themselves effectively. I have done freelance work for for-profit and non-profit companies, including Girl Scouts of Greater Atlanta, Ochsner Clinic Foundation, Ronald McDonald House Charities-South Louisiana, and Volunteers of America (Baton Rouge chapter), and working at Girl Scouts Louisiana East for the last 13 years.",
-  imageUrl: "../images/girl1.jpg"
- },
-  {
-  id: 3,
-  title: "Lead Frontend Developer",
-  firstName: "Margaret",
-  lastName: "Christine",
-  field: "Technology",
-  location: "United Kingdom",
-  payRate: "$70/h",
- description:"I'm a Frontend Developer with over 25 years of experience in the tech world, helping businesses and individuals promote themselves effectively. I have done freelance work for for-profit and non-profit companies, including Girl Scouts of Greater Atlanta, Ochsner Clinic Foundation, Ronald McDonald House Charities-South Louisiana, and Volunteers of America (Baton Rouge chapter), and working at Girl Scouts Louisiana East for the last 13 years.",
-  imageUrl: "../images/margaret.jpg"
- },
-  {
-  id: 4,
-  title: "Financial Advisor",
-  firstName: "Fernando",
-  lastName: "Puentes",
-  field: "Finance",
-  location: "United Kingdom",
-  payRate: "$90/h",
- description:"I'm a Financial Advisor with over 25 years of experience in the financial world, helping businesses and individuals manage capital effectively. I have done freelance work for for-profit and non-profit companies, including Girl Scouts of Greater Atlanta, Ochsner Clinic Foundation, Ronald McDonald House Charities-South Louisiana, and Volunteers of America (Baton Rouge chapter), and working at Girl Scouts Louisiana East for the last 13 years.",
-  imageUrl: "../images/carlos.jpg"
- },
-],
-"employers":
-[
- {
-  id: 5,
-  title: "Backend Developer",
-  field: "Technology",
-  organization: "Logitech",
-  location: "Costa Rica",
-  payRate: "$35/h",
-  description:"I'm a Financial Advisor with over 25 years of experience in the financial world, helping businesses and individuals manage capital effectively. I have done freelance work for for-profit and non-profit companies, including Girl Scouts of Greater Atlanta, Ochsner Clinic Foundation, Ronald McDonald House Charities-South Louisiana, and Volunteers of America (Baton Rouge chapter), and working at Girl Scouts Louisiana East for the last 13 years.",
-  imageUrl: "../images/company.jpg"
- },
- {
-  id: 6,
-  title: "Copywriter",
-  field: "Marketing",
-  organization: "Design and Conquer",
-  location: "Ecuador",
-  payRate: "$12/h",
-  description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at condimentum magna. Phasellus iaculis fermentum felis, id molestie quam. Vestibulum.",
-  imageUrl: "../images/corp_logo.png"
- },
-  {
-  id: 7,
-  title: "Sales Agent",
-  field: "Sales",
-  organization: "Lion Trading",
-  location: "United States",
-  payRate: "$30/h",
-  description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at condimentum magna. Phasellus iaculis fermentum felis, id molestie quam. Vestibulum.",
-  imageUrl: "../images/corp_logo.png"
- },
-  {
-  id: 8,
-  title: "Blockchain Developer",
-  field: "Blockchain",
-  organization: "Ethereum Foundation",
-  location: "United States",
-  payRate: "$70/h",
-  description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at condimentum magna. Phasellus iaculis fermentum felis, id molestie quam. Vestibulum.",
-  imageUrl: "../images/brand.jpg"
- },
-  {
-  id: 9,
-  title: "Creative Designer",
-  field: "Marketing",
-  organization: "ABC Marketing",
-  location: "United States",
-  payRate: "$28/h",
-  description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at condimentum magna. Phasellus iaculis fermentum felis, id molestie quam. Vestibulum.",
-  imageUrl: "../images/business.png"
- }
-]
-}
-
-
+  employee: [
+    {
+      id: 1,
+      title: 'Medical Doctor',
+      firstName: 'Brian',
+      lastName: 'Cranston',
+      field: 'Medical',
+      location: 'Mexico',
+      payRate: '$20/h',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at condimentum magna. Phasellus iaculis fermentum felis, id molestie quam. Vestibulum.',
+      imageUrl: '../images/guy1.jpg',
+    },
+    {
+      id: 2,
+      title: 'Marketing Manager',
+      firstName: 'Shonda',
+      lastName: 'Rhymes',
+      field: 'Marketing',
+      location: 'Costa Rica',
+      payRate: '$25/h',
+      description:
+        "I'm a graphic designer with over 25 years of experience in the design world, helping businesses and individuals promote themselves effectively. I have done freelance work for for-profit and non-profit companies, including Girl Scouts of Greater Atlanta, Ochsner Clinic Foundation, Ronald McDonald House Charities-South Louisiana, and Volunteers of America (Baton Rouge chapter), and working at Girl Scouts Louisiana East for the last 13 years.",
+      imageUrl: '../images/girl1.jpg',
+    },
+    {
+      id: 3,
+      title: 'Lead Frontend Developer',
+      firstName: 'Margaret',
+      lastName: 'Christine',
+      field: 'Technology',
+      location: 'United Kingdom',
+      payRate: '$70/h',
+      description:
+        "I'm a Frontend Developer with over 25 years of experience in the tech world, helping businesses and individuals promote themselves effectively. I have done freelance work for for-profit and non-profit companies, including Girl Scouts of Greater Atlanta, Ochsner Clinic Foundation, Ronald McDonald House Charities-South Louisiana, and Volunteers of America (Baton Rouge chapter), and working at Girl Scouts Louisiana East for the last 13 years.",
+      imageUrl: '../images/margaret.jpg',
+    },
+    {
+      id: 4,
+      title: 'Financial Advisor',
+      firstName: 'Fernando',
+      lastName: 'Puentes',
+      field: 'Finance',
+      location: 'United Kingdom',
+      payRate: '$90/h',
+      description:
+        "I'm a Financial Advisor with over 25 years of experience in the financial world, helping businesses and individuals manage capital effectively. I have done freelance work for for-profit and non-profit companies, including Girl Scouts of Greater Atlanta, Ochsner Clinic Foundation, Ronald McDonald House Charities-South Louisiana, and Volunteers of America (Baton Rouge chapter), and working at Girl Scouts Louisiana East for the last 13 years.",
+      imageUrl: '../images/carlos.jpg',
+    },
+  ],
+  employers: [
+    {
+      id: 5,
+      title: 'Backend Developer',
+      field: 'Technology',
+      organization: 'Logitech',
+      location: 'Costa Rica',
+      payRate: '$35/h',
+      description:
+        "I'm a Financial Advisor with over 25 years of experience in the financial world, helping businesses and individuals manage capital effectively. I have done freelance work for for-profit and non-profit companies, including Girl Scouts of Greater Atlanta, Ochsner Clinic Foundation, Ronald McDonald House Charities-South Louisiana, and Volunteers of America (Baton Rouge chapter), and working at Girl Scouts Louisiana East for the last 13 years.",
+      imageUrl: '../images/company.jpg',
+    },
+    {
+      id: 6,
+      title: 'Copywriter',
+      field: 'Marketing',
+      organization: 'Design and Conquer',
+      location: 'Ecuador',
+      payRate: '$12/h',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at condimentum magna. Phasellus iaculis fermentum felis, id molestie quam. Vestibulum.',
+      imageUrl: '../images/corp_logo.png',
+    },
+    {
+      id: 7,
+      title: 'Sales Agent',
+      field: 'Sales',
+      organization: 'Lion Trading',
+      location: 'United States',
+      payRate: '$30/h',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at condimentum magna. Phasellus iaculis fermentum felis, id molestie quam. Vestibulum.',
+      imageUrl: '../images/corp_logo.png',
+    },
+    {
+      id: 8,
+      title: 'Blockchain Developer',
+      field: 'Blockchain',
+      organization: 'Ethereum Foundation',
+      location: 'United States',
+      payRate: '$70/h',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at condimentum magna. Phasellus iaculis fermentum felis, id molestie quam. Vestibulum.',
+      imageUrl: '../images/brand.jpg',
+    },
+    {
+      id: 9,
+      title: 'Creative Designer',
+      field: 'Marketing',
+      organization: 'ABC Marketing',
+      location: 'United States',
+      payRate: '$28/h',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at condimentum magna. Phasellus iaculis fermentum felis, id molestie quam. Vestibulum.',
+      imageUrl: '../images/business.png',
+    },
+  ],
+};
