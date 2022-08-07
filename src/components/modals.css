@@ -47,6 +47,8 @@
 
 .modalInfo {
   grid-area: body;
+  display: flex;
+  flex-direction: column;
 }
 
 .messageBtnDiv {

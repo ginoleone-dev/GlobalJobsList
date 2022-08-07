@@ -20,7 +20,7 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 500,
+  width: { xs: '400', sm: '500' },
   bgcolor: 'background.paper',
   border: '2px solid #000',
   boxShadow: 24,
@@ -125,7 +125,7 @@ export default function Contact() {
       {/* Outer Card */}
       <Card
         style={{
-          maxWidth: 600,
+          maxWidth: { xs: '350px', sm: '600px' },
           margin: '0 auto',
           padding: '5rem 0px',
           backgroundColor: 'transparent',
@@ -136,7 +136,7 @@ export default function Contact() {
         <CardContent
           style={{
             maxWidth: 600,
-            backgroundColor: '#0d6efd',
+            backgroundColor: '#000814',
             borderRadius: '20px',
           }}
         >

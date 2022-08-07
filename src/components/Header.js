@@ -13,13 +13,13 @@ import { createTheme } from '@mui/material';
 
 const pages = ['About', 'Contact'];
 
-  const customTheme = createTheme({
+const customTheme = createTheme({
   palette: {
     secondary: {
-      main: "#14213d",
-      contrastText: "#white "
-    }
-  }
+      main: '#14213d',
+      contrastText: '#white ',
+    },
+  },
 });
 
 const ResponsiveAppBar = () => {
@@ -29,86 +29,82 @@ const ResponsiveAppBar = () => {
     setAnchorElNav(null);
   };
 
-
-
   return (
-      <ThemeProvider theme={customTheme}>
-    <AppBar position="static" style={{width:"100vw"}}>
-      <Container maxWidth="xl">
-        <Toolbar disableGutters >
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            GLOBALJOBSLIST
-          </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex',md: 'none'} }}>
-
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
+    <ThemeProvider theme={customTheme}>
+      <AppBar position="static" style={{ width: '100vw' }}>
+        <Container maxWidth="xl">
+          <Toolbar disableGutters>
+            <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              href="/"
               sx={{
-                display: { xs: 'block', md: 'none' },
+                mr: 2,
+                display: { xs: 'flex', md: 'flex' },
+                fontFamily: 'monospace',
+                fontWeight: 700,
+                letterSpacing: '.3rem',
+                color: 'inherit',
+                textDecoration: 'none',
+                fontSize: { xs: '0.8rem', sm: '1.3em' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">
-                    <Link to={`/${page}`}>
-                    {page}
-                    </Link>
-                  </Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
+              GLOBALJOBSLIST
+            </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorElNav}
+                anchorOrigin={{
+                  vertical: 'bottom',
+                  horizontal: 'left',
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'left',
+                }}
+                open={Boolean(anchorElNav)}
+                onClose={handleCloseNavMenu}
+                sx={{
+                  display: { xs: 'block', md: 'none' },
+                }}
               >
-                <Link style={{textDecoration: "none", color:"white"}} to={`/${page}`}>
-                  {page}
-                </Link>
-              </Button>
-            ))}
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
+                {pages.map((page) => (
+                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">
+                      <Link to={`/${page}`}>{page}</Link>
+                    </Typography>
+                  </MenuItem>
+                ))}
+              </Menu>
+            </Box>
+
+            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex' } }}>
+              {pages.map((page) => (
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                  <Link
+                    style={{ textDecoration: 'none', color: 'white' }}
+                    to={`/${page}`}
+                  >
+                    {page}
+                  </Link>
+                </Button>
+              ))}
+            </Box>
+          </Toolbar>
+        </Container>
+      </AppBar>
     </ThemeProvider>
   );
 };
 export default ResponsiveAppBar;
-
-
 
 //  <nav className="navBar">
 //     <h1 className="pageTitle">GlobalJobsList</h1>
@@ -119,7 +115,7 @@ export default ResponsiveAppBar;
 //     </ul>
 //       <span className='hamburger'>
 //         <a href='#' onClick={toggleMenu}><i className="fa fa-bars"></i></a>
-//       </span>      
+//       </span>
 //  </nav>
 // const [openMenu, setOpenMenu] = useState(false)
 
