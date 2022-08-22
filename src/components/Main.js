@@ -82,17 +82,56 @@ export default function Main() {
   return (
     <Box minHeight={700}>
       <div className="mainContainer">
-        <div className="textEmployee">
-          <h1 className="titleHire">Looking to hire someone?</h1>
-          <p className="parrHire">The best thing money can buy is time. </p>
-        </div>
-        <div className="textEmployer">
-          <h1 className="titleHire">Looking for a job?</h1>
-          <p className="parrHire">
-            <span className="discover">Discover</span> your next big
-            opportunity.{" "}
-          </p>
-        </div>
+        <Container
+          className="textEmployee"
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            alignItems: "center",
+          }}
+        >
+          <Typography
+            className="titleHire"
+            variant="h4"
+            marginTop="20px"
+            fontSize={{ xs: "1.8rem", sm: "1.9rem", md: "2rem" }}
+          >
+            Looking to hire someone?
+          </Typography>
+          <Typography
+            variant="h4"
+            marginTop="10px"
+            fontSize={{ xs: "1rem", sm: "1.2rem", md: "1.2rem" }}
+          >
+            Find your next.{" "}
+          </Typography>
+        </Container>
+        <Container
+          className="textEmployer"
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            alignItems: "center",
+          }}
+        >
+          <Typography
+            className="titleHire"
+            variant="h4"
+            marginTop="20px"
+            fontSize={{ xs: "1.8rem", sm: "1.9rem", md: "2rem" }}
+          >
+            Looking to hire someone?
+          </Typography>
+          <Typography
+            variant="h4"
+            marginTop="10px"
+            fontSize={{ xs: "1rem", sm: "1.2rem", md: "1.2rem" }}
+          >
+            Find your next.{" "}
+          </Typography>
+        </Container>
         <div className="employee">
           {/* <div className="filterBtnEmployee"> */}
 

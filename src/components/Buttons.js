@@ -8,7 +8,7 @@ export default function Buttons({ button, filter, loaded }) {
         display: "flex",
         justifyContent: "center",
         flexWrap: "wrap",
-        maxWidth: "500px",
+        maxWidth: { xs: "400px", sm: "500px", lg: "600px" },
         maxHeight: "150px",
       }}
     >
