@@ -1,13 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import {
+  Container,
+  Modal,
+  Box,
+  Avatar,
+  Typography,
+  IconButton,
+} from "@mui/material";
+import EmailIcon from "@mui/icons-material/Email";
 
 export default function EmployerMenu({ menuItem }) {
   const [modalContent, setModalContent] = useState([]);
 
   const [modalToggle, setModalToggle] = useState(false);
+  const handleClose = () => setModalToggle(false);
 
   const changeContent = (item) => {
     setModalContent([item]);
     setModalToggle(!modalToggle);
+  };
+  const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 450,
+    bgcolor: "background.paper",
+    border: "2px solid #000",
+    boxShadow: 24,
+    borderRadius: 3,
+    p: 4,
   };
 
   return (
@@ -42,6 +64,48 @@ export default function EmployerMenu({ menuItem }) {
       })}
 
       {modalToggle && (
+        <Container>
+          {modalContent.map((modal) => {
+            return (
+              <Modal key={modal.id} open={modalToggle} onClose={handleClose}>
+                <Box sx={style}>
+                  <Container
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Avatar alt="Remy Sharp" src={modal.imageUrl} />
+                    <Container>
+                      <Typography
+                        fontSize={"20px"}
+                      >{`${modal.title}`}</Typography>
+                      <Typography>{`${modal.organization} `}</Typography>
+                    </Container>
+                  </Container>
+                  <Container sx={{ mt: "24px" }}>
+                    <Typography paragraph>{modal.description}</Typography>
+                  </Container>
+                  <Container sx={{ mt: "24px" }}>
+                    <Typography>Contact {modal.firstName} at:</Typography>
+                    <IconButton aria-label="share">
+                      <EmailIcon />
+                      <Typography variant="body2">Email</Typography>
+                    </IconButton>
+                  </Container>
+                </Box>
+              </Modal>
+            );
+          })}
+        </Container>
+      )}
+    </div>
+  );
+}
+
+{
+  /* {modalToggle && (
         <div className="modalContainer" onClick={changeContent}>
           <div
             className="modalBody"
@@ -83,6 +147,7 @@ export default function EmployerMenu({ menuItem }) {
       )}
     </div>
   );
+} */
 }
 
 // <div key={modal.id} className="modalCard">

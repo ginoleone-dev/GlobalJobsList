@@ -10,6 +10,7 @@ import {
   Typography,
   Modal,
   Box,
+  Container,
 } from '@mui/material';
 import './Pages.css';
 import { db } from '../firebase-config';
@@ -123,152 +124,159 @@ export default function Contact() {
         </Modal>
       )}
       {/* Outer Card */}
-      <Card
-        style={{
-          maxWidth: { xs: '350px', sm: '600px' },
-          margin: '0 auto',
-          padding: '5rem 0px',
-          backgroundColor: 'transparent',
-          boxShadow: 'none',
-          height: '100vh',
-        }}
+      <Container
+        sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
       >
-        <CardContent
+        <Card
           style={{
-            maxWidth: 600,
-            backgroundColor: '#000814',
-            borderRadius: '20px',
+            maxWidth: { xs: '350px', sm: '600px' },
+            margin: '0 auto',
+            padding: '5rem 0px',
+            backgroundColor: 'transparent',
+            boxShadow: 'none',
+            height: '100vh',
           }}
         >
-          <Typography
-            gutterBottom
-            variant="h5"
+          <CardContent
             style={{
-              fontFamily: 'inter',
-              color: '#ffffff',
-              margin: '10px 5px',
-              fontSize: '2rem',
-              textAlign: 'center',
-              height: '50px',
+              maxWidth: 600,
+              backgroundColor: '#000814',
+              borderRadius: '20px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
             }}
           >
-            Contact Us
-          </Typography>
-          <Typography
-            variant="body2"
-            component="p"
-            style={{
-              fontFamily: 'inter',
-              color: '#ffffff',
-              margin: '10px 5px',
-            }}
-          >
-            I would like to know any possible improvement that you can think of!
-            - Made with MaterialUI
-          </Typography>
+            <Typography
+              gutterBottom
+              variant="h5"
+              style={{
+                fontFamily: 'inter',
+                color: '#ffffff',
+                margin: '10px 5px',
+                fontSize: '2rem',
+                textAlign: 'center',
+                height: '50px',
+              }}
+            >
+              Contact Us
+            </Typography>
+            <Typography
+              variant="body2"
+              component="p"
+              style={{
+                fontFamily: 'inter',
+                color: '#ffffff',
+                margin: '10px 5px',
+              }}
+            >
+              I would like to know any possible improvement that you can think
+              of! - Made with MaterialUI
+            </Typography>
 
-          {/* Outer Grid */}
-          <Grid container spacing={2}>
-            <Grid xs={12} sm={6} item>
-              <TextField
-                label="First Name"
-                placeholder="Enter first name"
-                variant="filled"
-                value={firstName}
-                onChange={(event) => {
-                  setFirstName(event.target.value);
-                }}
-                style={{
-                  backgroundColor: '#edede9',
-                  borderRadius: 12,
-                }}
-                fullWidth
-                required
-              />
+            {/* Outer Grid */}
+            <Grid container spacing={2}>
+              <Grid xs={12} sm={6} item>
+                <TextField
+                  label="First Name"
+                  placeholder="Enter first name"
+                  variant="filled"
+                  value={firstName}
+                  onChange={(event) => {
+                    setFirstName(event.target.value);
+                  }}
+                  style={{
+                    backgroundColor: '#edede9',
+                    borderRadius: 12,
+                  }}
+                  fullWidth
+                  required
+                />
+              </Grid>
+              <Grid xs={12} sm={6} item>
+                <TextField
+                  label="Last Name"
+                  placeholder="Enter last name"
+                  variant="filled"
+                  name="lastName"
+                  value={lastName}
+                  onChange={(event) => {
+                    setLastName(event.target.value);
+                  }}
+                  style={{
+                    backgroundColor: '#edede9',
+                    borderRadius: 12,
+                  }}
+                  fullWidth
+                  required
+                />
+              </Grid>
+              <Grid xs={12} item>
+                <TextField
+                  type="email"
+                  label="Email"
+                  placeholder="Enter email name"
+                  variant="filled"
+                  name="email"
+                  value={email}
+                  onChange={(event) => {
+                    setEmail(event.target.value);
+                  }}
+                  style={{
+                    backgroundColor: '#edede9',
+                    borderRadius: 12,
+                  }}
+                  fullWidth
+                  required
+                />
+              </Grid>
+              <Grid xs={12} item>
+                <TextField
+                  type="message"
+                  multiline
+                  rows={4}
+                  label="Message"
+                  placeholder="Type your message"
+                  name="message"
+                  value={message}
+                  onChange={(event) => {
+                    setMessage(event.target.value);
+                  }}
+                  style={{
+                    backgroundColor: '#edede9',
+                    borderRadius: 12,
+                  }}
+                  variant="filled"
+                  fullWidth
+                  required
+                />
+              </Grid>
+              <Grid xs={12} item>
+                <Button
+                  variant="contained"
+                  align="center"
+                  style={{
+                    backgroundColor: '#edede9',
+                    color: '#000000',
+                    borderRadius: '5px',
+                    margin: '0 auto',
+                    display: 'flex',
+                    height: 50,
+                    width: 200,
+                  }}
+                  onClick={() => {
+                    createContact();
+                    handleOpen();
+                  }}
+                  fullWidth
+                >
+                  Submit
+                </Button>
+              </Grid>
             </Grid>
-            <Grid xs={12} sm={6} item>
-              <TextField
-                label="Last Name"
-                placeholder="Enter last name"
-                variant="filled"
-                name="lastName"
-                value={lastName}
-                onChange={(event) => {
-                  setLastName(event.target.value);
-                }}
-                style={{
-                  backgroundColor: '#edede9',
-                  borderRadius: 12,
-                }}
-                fullWidth
-                required
-              />
-            </Grid>
-            <Grid xs={12} item>
-              <TextField
-                type="email"
-                label="Email"
-                placeholder="Enter email name"
-                variant="filled"
-                name="email"
-                value={email}
-                onChange={(event) => {
-                  setEmail(event.target.value);
-                }}
-                style={{
-                  backgroundColor: '#edede9',
-                  borderRadius: 12,
-                }}
-                fullWidth
-                required
-              />
-            </Grid>
-            <Grid xs={12} item>
-              <TextField
-                type="message"
-                multiline
-                rows={4}
-                label="Message"
-                placeholder="Type your message"
-                name="message"
-                value={message}
-                onChange={(event) => {
-                  setMessage(event.target.value);
-                }}
-                style={{
-                  backgroundColor: '#edede9',
-                  borderRadius: 12,
-                }}
-                variant="filled"
-                fullWidth
-                required
-              />
-            </Grid>
-            <Grid xs={12} item>
-              <Button
-                variant="contained"
-                align="center"
-                style={{
-                  backgroundColor: '#edede9',
-                  color: '#000000',
-                  borderRadius: '5px',
-                  margin: '0 auto',
-                  display: 'flex',
-                  height: 50,
-                  width: 200,
-                }}
-                onClick={() => {
-                  createContact();
-                  handleOpen();
-                }}
-                fullWidth
-              >
-                Submit
-              </Button>
-            </Grid>
-          </Grid>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      </Container>
 
       <Footer />
     </>

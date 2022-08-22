@@ -1,14 +1,15 @@
-import React from 'react';
+import { Box } from "@mui/material";
+import React from "react";
 
-import { BrowserRouter as Route, Outlet } from 'react-router-dom';
-import ResponsiveAppBar from './components/Header';
+import { BrowserRouter as Route, Outlet } from "react-router-dom";
+import ResponsiveAppBar from "./components/Header";
 
 function App() {
   return (
-    <div>
+    <Box>
       <ResponsiveAppBar />
       <Outlet />
-    </div>
+    </Box>
   );
 }
 
