@@ -29,6 +29,7 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import Header from "../Header";
+import { useNavigate } from "react-router-dom";
 
 export default function CreateListing() {
   const style = {
@@ -42,6 +43,8 @@ export default function CreateListing() {
     boxShadow: 24,
     p: 2,
   };
+
+  const navigate = useNavigate();
   // Radio buttons state and logic
   const [roleValue, setRoleValue] = useState("employee");
 
@@ -155,6 +158,7 @@ export default function CreateListing() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
     setOpen(false);
+    navigate("/");
   };
 
   // // //  //  //  //  //  //  //  //  // // // //  //  //
