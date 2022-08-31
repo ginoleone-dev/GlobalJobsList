@@ -18,7 +18,6 @@ function App() {
     return currentUser ? children : <Navigate to={"/login"} />;
   };
 
-  console.log(currentUser);
   return (
     <Box sx={{ minHeight: "100vh" }}>
       <BrowserRouter>
