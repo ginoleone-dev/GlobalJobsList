@@ -4,6 +4,7 @@ import "../components/modals.css";
 import {
   Avatar,
   Box,
+  Button,
   Container,
   IconButton,
   Modal,
@@ -31,7 +32,7 @@ export default function EmployeeMenu({ menuItem }) {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: 450,
+    width: { xs: "400px", md: "500px" },
     bgcolor: "background.paper",
     border: "2px solid #000",
     boxShadow: 24,
@@ -40,34 +41,79 @@ export default function EmployeeMenu({ menuItem }) {
   };
 
   return (
-    <div className="content-container">
+    <Container sx={{maxWidth: { xs: "350px",sm:'550px', md: "650px", lg: "800px" }, display:'flex', flexDirection:'column', justifyContent:'center'}}>
       {menuItem.map((item) => {
         return (
-          <div className="item-con" key={item.id}>
-            <div className="listing">
-              <div className="listing-container">
-                <img className="profilePhoto" src={item.imageUrl}></img>
-                <div className="listing-mainbox">
-                  <h4 className="employeeLabels  fieldAtOrg ">{item.field}</h4>
-                  <h3 className="employeeLabels">
-                    {item.title} in {item.location}
-                  </h3>
-                  <h2 className="employeeLabels">
-                    {item.firstName} {item.lastName}
-                  </h2>
-                  <h4 className="employeeLabels">Pay rate: {item.payRate}</h4>
-                </div>
-                <div>
-                  <button
-                    className="openModalBtn"
-                    onClick={() => changeContent(item)}
-                  >
-                    See More
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+          // <Container
+          //   key={item.uuid}
+          //   sx={{
+          //     backgroundColor: "white",
+          //     mt: "12px",
+          //     maxWidth: { xs: "450px", sm:'620px',md: "700px", lg: "800px" },
+          //     borderRadius:'12px'
+
+          //   }}
+          // >
+            <Container key={item.uuid}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent:'center',
+                backgroundColor:'white',
+                mt:'12px',
+                borderRadius:'12px'
+                
+              }}
+            >
+              <img className="profilePhoto" src={item.fileURL}></img>
+              <Container sx={{minWidth:{xs:'140px'}, minHeight:'120px', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
+                <Typography
+                  sx={{
+                    textAlign: "center",
+                    fontSize: { xs: "1rem", md: "1.2rem" },
+                  }}
+                >
+                  {item.field}
+                </Typography>
+                <Typography
+                  sx={{
+                    textAlign: "center",
+                    fontSize: { xs: "0.8rem", md: "1rem" },
+                  }}
+                >
+                  {item.jobTitle} in {item.location}
+                </Typography>
+                <Typography
+                  sx={{
+                    textAlign: "center",
+                    fontSize: { xs: "0.8rem", md: "1rem" },
+                    mt: "2px",
+                  }}
+                >
+                  {item.firstName} {item.lastName}
+                </Typography>
+                <Typography
+                  sx={{
+                    textAlign: "center",
+                    fontSize: { xs: "0.9rem", md: "1rem" },
+                    mt: "2px",
+                  }}
+                >
+                  Pay rate: {item.payRate}
+                </Typography>
+              </Container>
+
+                <Button sx={{minWidth:{xs:'60px', md:'150px'}, backgroundColor: "#1976d2",
+                color: "white",
+                mb: "8px",
+                fontSize: {
+                  xs: "0.5rem",
+                  sm: "0.8rem",
+                  md: "0.8rem",
+                }}}  onClick={() => changeContent(item)}>See More</Button>
+
+            </Container>
+          // </Container>
         );
       })}
 
@@ -75,7 +121,7 @@ export default function EmployeeMenu({ menuItem }) {
         <Container>
           {modalContent.map((modal) => {
             return (
-              <Modal key={modal.id} open={modalToggle} onClose={handleClose}>
+              <Modal key={modal.uuid} open={modalToggle} onClose={handleClose}>
                 <Box sx={style}>
                   <Container
                     sx={{
@@ -84,12 +130,12 @@ export default function EmployeeMenu({ menuItem }) {
                       justifyContent: "center",
                     }}
                   >
-                    <Avatar alt="Remy Sharp" src={modal.imageUrl} />
+                    <Avatar alt="Remy Sharp" src={modal.fileURL} />
                     <Container>
                       <Typography
                         fontSize={"20px"}
                       >{`${modal.firstName} ${modal.lastName}`}</Typography>
-                      <Typography>{`${modal.title} at ${modal.location}`}</Typography>
+                      <Typography>{`${modal.jobTitle} at ${modal.location}`}</Typography>
                     </Container>
                   </Container>
                   <Container sx={{ mt: "24px" }}>
@@ -97,10 +143,18 @@ export default function EmployeeMenu({ menuItem }) {
                   </Container>
                   <Container sx={{ mt: "24px" }}>
                     <Typography>Contact {modal.firstName} at:</Typography>
-                    <IconButton aria-label="share">
-                      <EmailIcon />
-                      <Typography variant="body2">Email</Typography>
-                    </IconButton>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        margin: "0px",
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        gap: "5px",
+                      }}
+                    >
+                      <EmailIcon /> {modal.email}
+                    </Typography>
                   </Container>
                 </Box>
               </Modal>
@@ -108,21 +162,6 @@ export default function EmployeeMenu({ menuItem }) {
           })}
         </Container>
       )}
-    </div>
+    </Container>
   );
 }
-
-// <div key={modal.id} className="modalCard">
-//   <div className="modalHead">
-//     <img className="modalImg" src={modal.imageUrl}></img>
-//     <h2 className="modalTitle">{modal.title} from {modal.location}</h2>
-//     <h3 className="modalPay">{modal.payRate}</h3>
-//   </div>
-//   <div className="modalInfo">
-//     <h4 className="modalShort">If you are an experienced {modal.title} who wants to grow in a high performing business in {modal.field}, we are perfect for you. </h4>
-//     <p className="modalDescription">{modal.description}</p>
-//   </div>
-//   <div className="messageBtnDiv">
-//    <button className="messageBtn">Message {modal.firstName}</button>
-// </div>
-// </div>

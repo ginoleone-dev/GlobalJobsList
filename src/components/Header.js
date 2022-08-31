@@ -22,7 +22,7 @@ const customTheme = createTheme({
   },
 });
 
-const ResponsiveAppBar = () => {
+const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleCloseNavMenu = () => {
@@ -104,7 +104,7 @@ const ResponsiveAppBar = () => {
     </ThemeProvider>
   );
 };
-export default ResponsiveAppBar;
+export default Header;
 
 //  <nav className="navBar">
 //     <h1 className="pageTitle">GlobalJobsList</h1>

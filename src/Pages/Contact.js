@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { useState, useEffect } from 'react';
-import Footer from '../components/Footer';
+import * as React from "react";
+import { useState, useEffect } from "react";
+import Footer from "../components/Footer";
 import {
   Button,
   Card,
@@ -11,43 +11,44 @@ import {
   Modal,
   Box,
   Container,
-} from '@mui/material';
-import './Pages.css';
-import { db } from '../firebase-config';
-import { collection, getDocs, addDoc } from 'firebase/firestore';
+} from "@mui/material";
+import "./Pages.css";
+import { db } from "../firebase-config";
+import { collection, getDocs, addDoc } from "firebase/firestore";
+import Header from "../components/Header";
 
 const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: { xs: '400', sm: '500' },
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: { xs: "400", sm: "500" },
+  bgcolor: "background.paper",
+  border: "2px solid #000",
   boxShadow: 24,
   p: 2,
 };
 
 const textAreaStyle = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
   width: 500,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
+  bgcolor: "background.paper",
+  border: "2px solid #000",
   // marginTop: -50,
   boxShadow: 24,
   p: 4,
 };
 
 export default function Contact() {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-  const contactsCollectionRef = collection(db, 'contacts');
+  const contactsCollectionRef = collection(db, "contacts");
 
   // Connecting to the db on page load
   useEffect(() => {
@@ -59,15 +60,15 @@ export default function Contact() {
 
   // Set fields blank
   const blankFields = () => {
-    setFirstName('');
-    setLastName('');
-    setEmail('');
-    setMessage('');
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setMessage("");
   };
 
   // Modal
 
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
     setOpen(false);
@@ -86,6 +87,7 @@ export default function Contact() {
 
   return (
     <>
+      <Header />
       {open && (
         <Modal
           open={open}
@@ -106,10 +108,10 @@ export default function Contact() {
               align="center"
               color="primary"
               style={{
-                color: '#ffffff',
-                borderRadius: '5px',
-                margin: '10px auto',
-                display: 'flex',
+                color: "#ffffff",
+                borderRadius: "5px",
+                margin: "10px auto",
+                display: "flex",
                 height: 50,
                 width: 160,
               }}
@@ -125,38 +127,38 @@ export default function Contact() {
       )}
       {/* Outer Card */}
       <Container
-        sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
       >
         <Card
           style={{
-            maxWidth: { xs: '350px', sm: '600px' },
-            margin: '0 auto',
-            padding: '5rem 0px',
-            backgroundColor: 'transparent',
-            boxShadow: 'none',
-            height: '100vh',
+            maxWidth: { xs: "350px", sm: "600px" },
+            margin: "0 auto",
+            padding: "5rem 0px",
+            backgroundColor: "transparent",
+            boxShadow: "none",
+            height: "100vh",
           }}
         >
           <CardContent
             style={{
               maxWidth: 600,
-              backgroundColor: '#000814',
-              borderRadius: '20px',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
+              backgroundColor: "#2C3E50",
+              borderRadius: "20px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
             }}
           >
             <Typography
               gutterBottom
               variant="h5"
               style={{
-                fontFamily: 'inter',
-                color: '#ffffff',
-                margin: '10px 5px',
-                fontSize: '2rem',
-                textAlign: 'center',
-                height: '50px',
+                fontFamily: "inter",
+                color: "#ffffff",
+                margin: "10px 5px",
+                fontSize: "2rem",
+                textAlign: "center",
+                height: "50px",
               }}
             >
               Contact Us
@@ -165,9 +167,9 @@ export default function Contact() {
               variant="body2"
               component="p"
               style={{
-                fontFamily: 'inter',
-                color: '#ffffff',
-                margin: '10px 5px',
+                fontFamily: "inter",
+                color: "#ffffff",
+                margin: "10px 5px",
               }}
             >
               I would like to know any possible improvement that you can think
@@ -186,7 +188,7 @@ export default function Contact() {
                     setFirstName(event.target.value);
                   }}
                   style={{
-                    backgroundColor: '#edede9',
+                    backgroundColor: "#edede9",
                     borderRadius: 12,
                   }}
                   fullWidth
@@ -204,7 +206,7 @@ export default function Contact() {
                     setLastName(event.target.value);
                   }}
                   style={{
-                    backgroundColor: '#edede9',
+                    backgroundColor: "#edede9",
                     borderRadius: 12,
                   }}
                   fullWidth
@@ -223,7 +225,7 @@ export default function Contact() {
                     setEmail(event.target.value);
                   }}
                   style={{
-                    backgroundColor: '#edede9',
+                    backgroundColor: "#edede9",
                     borderRadius: 12,
                   }}
                   fullWidth
@@ -243,7 +245,7 @@ export default function Contact() {
                     setMessage(event.target.value);
                   }}
                   style={{
-                    backgroundColor: '#edede9',
+                    backgroundColor: "#edede9",
                     borderRadius: 12,
                   }}
                   variant="filled"
@@ -256,11 +258,11 @@ export default function Contact() {
                   variant="contained"
                   align="center"
                   style={{
-                    backgroundColor: '#edede9',
-                    color: '#000000',
-                    borderRadius: '5px',
-                    margin: '0 auto',
-                    display: 'flex',
+                    backgroundColor: "#edede9",
+                    color: "#000000",
+                    borderRadius: "5px",
+                    margin: "0 auto",
+                    display: "flex",
                     height: 50,
                     width: 200,
                   }}

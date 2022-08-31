@@ -2,208 +2,208 @@ import "./Pages.css";
 import Footer from "../components/Footer";
 import { styled } from "@mui/material/styles";
 
-import { Box, Button, Card, Container, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Card,
+  Container,
+  Grid,
+  Typography,
+  Stack,
+} from "@mui/material";
 
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import StorageIcon from "@mui/icons-material/Storage";
 import CodeIcon from "@mui/icons-material/Code";
 import LayersIcon from "@mui/icons-material/Layers";
+import Header from "../components/Header";
+import { faNodeJs, faReact } from "@fortawesome/free-brands-svg-icons";
+import JavascriptIcon from "@mui/icons-material/Javascript";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 export default function About() {
   return (
-    <Card
-      sx={{
-        backgroundImage: "linear-gradient(to right, #8e9eab, #eef2f3);",
-        width: "100vw",
-        height: "100vh",
-      }}
-    >
-      <Container sx={{ display: "flex", justifyContent: "center" }}>
-        <Grid
-          container
-          spacing={3}
-          maxWidth={700}
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <Grid item xs={12} justifyContent="center">
-            <Container sx={{ padding: "15px" }}>
-              <Typography
-                sx={{
-                  fontSize: { xs: "2rem", sm: "2.5rem" },
-                  textAlign: "center",
-                  fontFamily: "Inter",
-                  mt: "15px",
-                }}
-              >
-                About GlobalJobsList <RocketLaunchIcon fontSize="30px" />
-              </Typography>
-            </Container>
-          </Grid>
-          <Grid item xs={12}>
-            <Container>
-              <Typography
-                sx={{
-                  fontSize: { xs: "1.1rem", sm: "1.4rem" },
-                  textAlign: "center",
-                }}
-              >
-                Here are a couple of cool things about this app! Right now the
-                main focus is moving the incoming jobs data from a JSON file to
-                Firebase Realtime Database so that CRUD operations can be
-                performed on the job listings
-              </Typography>
-            </Container>
-          </Grid>
-          <Container
-            sx={{
-              borderRadius: "18px",
-
-              display: "flex",
-
-              mt: "20px",
-            }}
+    <>
+      <Header />
+      <Card
+        sx={{
+          backgroundImage: "linear-gradient(to right, #8e9eab, #eef2f3);",
+          width: "100vw",
+          height: "100vh",
+        }}
+      >
+        <Container sx={{ display: "flex", justifyContent: "center" }}>
+          <Grid
+            container
+            spacing={3}
+            maxWidth={700}
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
           >
-            <Container
-              sx={{
-                mt: "15px",
-                maxHeight: "600px",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                rowGap: "3rem",
-              }}
-            >
+            <Grid item xs={12} justifyContent="center">
+              <Container sx={{ padding: "15px" }}>
+                <Typography
+                  sx={{
+                    fontSize: { xs: "2rem", sm: "2.5rem" },
+                    textAlign: "center",
+                    fontFamily: "Inter",
+                    mt: "15px",
+                  }}
+                >
+                  About GlobalJobsList <RocketLaunchIcon fontSize="30px" />
+                </Typography>
+              </Container>
+            </Grid>
+            <Grid item xs={12}>
+              <Container>
+                <Typography
+                  sx={{
+                    fontSize: { xs: "1.1rem", sm: "1.4rem" },
+                    textAlign: "center",
+                  }}
+                >
+                  Here are a couple of cool things about this app! Right now the
+                  main focus is moving the incoming jobs data from a JSON file
+                  to Firebase Realtime Database so that CRUD operations can be
+                  performed on the job listings
+                </Typography>
+              </Container>
+            </Grid>
+            <Grid item xs={12} md={12} lg={12}>
               <Container
                 sx={{
-                  backgroundColor: "#000814",
-                  borderRadius: "18px",
+                  backgroundColor: "transparent",
+                  borderRadius: "15px",
                   display: "flex",
                   flexDirection: "column",
+                  justifyContent: "center",
                 }}
               >
-                <Grid item md={12}>
-                  <Typography
-                    sx={{
-                      color: "white",
-                      fontSize: "1.6rem",
-                      textAlign: "center",
-                    }}
-                    display="flex"
-                    justifyContent="center"
-                    alignItems="center"
-                  >
-                    <CodeIcon sx={{ fontSize: 35 }} /> React JS
-                  </Typography>
-                </Grid>
+                <Typography
+                  color={"black"}
+                  fontWeight={"500"}
+                  textAlign={"center"}
+                  justifyContent={"center"}
+                  alignItems={"center"}
+                  fontSize={"30px"}
+                >
+                  Technologies used to build this App
+                </Typography>
 
-                <Grid item xs={12}>
+                <Stack
+                  direction={"column"}
+                  spacing={2}
+                  mt={"12px"}
+                  maxHeight={"600px"}
+                  alignItems="center"
+                >
                   <Typography
-                    sx={{
-                      color: "white",
-                      fontSize: "0.9rem",
-                      textAlign: "center",
-                      mr: "20px",
-                      ml: "20px",
-                      mt: "10px",
-                    }}
+                    bgcolor="#2C3E50"
+                    color={"white"}
+                    textAlign={"center"}
+                    display={"flex"}
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                    fontSize={{ xs: "20px", md: "28px" }}
+                    p={"10px 70px"}
+                    minWidth={"350px"}
+                    borderRadius={"20px"}
                   >
-                    Made with React JS, the styling (almost all of it) is made
-                    with MUI
+                    <JavascriptIcon
+                      sx={{ fontSize: { xs: "30px", md: "38px" } }}
+                    />
+                    JavaScript
                   </Typography>
-                </Grid>
+
+                  <Typography
+                    bgcolor="#2C3E50"
+                    color={"white"}
+                    textAlign={"center"}
+                    display={"flex"}
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                    fontSize={{ xs: "20px", md: "28px" }}
+                    p={"10px 70px"}
+                    minWidth={"350px"}
+                    borderRadius={"20px"}
+                  >
+                    <FontAwesomeIcon
+                      icon={faNodeJs}
+                      style={{ marginRight: "5px" }}
+                    />
+                    Node JS
+                  </Typography>
+                  <Typography
+                    bgcolor="#2C3E50"
+                    color={"white"}
+                    textAlign={"center"}
+                    display={"flex"}
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                    fontSize={{ xs: "20px", md: "28px" }}
+                    p={"10px 70px"}
+                    minWidth={"350px"}
+                    borderRadius={"20px"}
+                  >
+                    <FontAwesomeIcon
+                      icon={faReact}
+                      style={{ marginRight: "5px" }}
+                    />
+                    React JS
+                  </Typography>
+                  <Typography
+                    bgcolor="#2C3E50"
+                    color={"white"}
+                    textAlign={"center"}
+                    display={"flex"}
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                    fontSize={{ xs: "20px", md: "28px" }}
+                    p={"10px 70px"}
+                    minWidth={"350px"}
+                    borderRadius={"20px"}
+                  >
+                    <GitHubIcon sx={{ marginRight: "5px" }} />
+                    Github
+                  </Typography>
+                  <Typography
+                    bgcolor="#2C3E50"
+                    color={"white"}
+                    textAlign={"center"}
+                    display={"flex"}
+                    justifyContent={"center"}
+                    fontSize={{ xs: "20px", md: "28px" }}
+                    p={"10px 70px"}
+                    minWidth={"350px"}
+                    borderRadius={"20px"}
+                  >
+                    Material UI
+                  </Typography>
+                </Stack>
               </Container>
-              <Container
-                sx={{ backgroundColor: "#000814", borderRadius: "18px" }}
-              >
-                <Grid item xs={12}>
-                  <Typography
-                    sx={{
-                      color: "white",
-                      fontSize: "1.6rem",
-                      textAlign: "center",
-                      mr: "20px",
-                      ml: "20px",
-                      pb: "10px",
-                    }}
-                  >
-                    <StorageIcon /> Firebase Database/ Realtime Database /
-                    NodeJS
-                  </Typography>
-                </Grid>
-                <Grid item xs={12}>
-                  <Typography
-                    sx={{
-                      color: "white",
-                      fontSize: "0.9rem",
-                      textAlign: "center",
-                      mr: "20px",
-                      ml: "20px",
-                      mt: "10px",
-                      pb: "10px",
-                    }}
-                  >
-                    To handle the data and perform CRUD applications, we use
-                    Firebase and Node JS
-                  </Typography>
-                </Grid>
-              </Container>
-              <Container
-                sx={{ backgroundColor: "#000814", borderRadius: "18px" }}
-              >
-                <Grid item md={12}>
-                  <Typography
-                    sx={{
-                      color: "white",
-                      fontSize: "1.6rem",
-                      textAlign: "center",
-                      mr: "20px",
-                      ml: "20px",
-                      pb: "10px",
-                    }}
-                  >
-                    <LayersIcon /> React Router
-                  </Typography>
-                </Grid>
-                <Grid item xs={12}>
-                  <Typography
-                    sx={{
-                      color: "white",
-                      fontSize: "0.9rem",
-                      textAlign: "center",
-                      mr: "20px",
-                      ml: "20px",
-                      mt: "10px",
-                      pb: "10px",
-                    }}
-                  >
-                    Used to handle a multi page application made with React JS
-                  </Typography>
-                </Grid>
-              </Container>
-            </Container>
-          </Container>
-        </Grid>
-      </Container>
-      <Container sx={{ mt: "60px" }}>
-        <Button
-          href="https://leonedevelopment.io/"
-          target="_blank"
-          sx={{
-            backgroundColor: "#1976d2",
-            color: "white",
-            float: "right",
-            mr: "50px",
-          }}
-        >
-          Back to portfolio
-        </Button>
-      </Container>
-      <Footer />
-    </Card>
+            </Grid>
+          </Grid>
+        </Container>
+        <Container sx={{ mt: "60px" }}>
+          <Button
+            href="https://leonedevelopment.io/"
+            target="_blank"
+            variant="primary"
+            sx={{
+              backgroundColor: "#1976d2",
+              color: "white",
+              float: "right",
+              mr: "50px",
+            }}
+          >
+            Back to portfolio
+          </Button>
+        </Container>
+        <Footer />
+      </Card>
+    </>
   );
 }
-
-// Will show if commited

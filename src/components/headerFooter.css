@@ -55,6 +55,9 @@ font-size: 1.5rem;
 
 .footerMain{
     position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 50px;
     background-image: linear-gradient(to right, #7a8791, #b8bcbd);
     bottom: 0px;

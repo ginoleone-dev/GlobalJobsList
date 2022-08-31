@@ -24,7 +24,7 @@ export default function EmployerMenu({ menuItem }) {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: 450,
+    width: {xs:'400px', md:'500px'},
     bgcolor: "background.paper",
     border: "2px solid #000",
     boxShadow: 24,
@@ -36,18 +36,19 @@ export default function EmployerMenu({ menuItem }) {
     <div className="content-container">
       {menuItem.map((item) => {
         return (
-          <div className="item-con" key={item.id}>
+          <div className="item-con" key={item.uuid}>
             <div className="listing">
               <div className="listing-container">
-                <img className="profilePhoto" src={item.imageUrl}></img>
+                <img className="profilePhoto" src={item.fileURL}></img>
                 <div className="listing-mainbox">
-                  <h4 className="employeeLabels fieldText">
-                    <span className="fieldAtOrg">{item.organization}</span>
-                  </h4>
-                  <h3 className="employeeLabels">
-                    {item.title} in {item.location}
-                  </h3>
-                  <h4 className="employeeLabels">Pay rate: {item.payRate}</h4>
+                  <Typography sx={{textAlign:'center', fontSize:{xs:'1rem', md:'1.2rem'}}}>{item.field}</Typography>
+                  <Typography sx={{textAlign:'center', fontSize:{xs:'0.9rem', md:'1rem'}}}>
+                    {item.jobTitle} in {item.location}
+                  </Typography>
+                  <Typography sx={{textAlign:'center', fontSize:{xs:'0.9rem', md:'1rem'}, mt:'2px'}}>
+                    {item.firstName} {item.lastName}
+                  </Typography>
+                  <Typography sx={{textAlign:'center', fontSize:{xs:'0.9rem', md:'1rem'}, mt:'2px'}}>Pay rate: {item.payRate}</Typography>
                 </div>
                 <div>
                   <button
@@ -76,7 +77,7 @@ export default function EmployerMenu({ menuItem }) {
                       justifyContent: "center",
                     }}
                   >
-                    <Avatar alt="Remy Sharp" src={modal.imageUrl} />
+                    {/* <Avatar alt="Remy Sharp" src={modal.imageUrl} /> */}
                     <Container>
                       <Typography
                         fontSize={"20px"}
