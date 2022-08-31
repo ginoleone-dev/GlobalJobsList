@@ -33,7 +33,6 @@ const Header = () => {
     setAnchorElNav(null);
   };
 
-  console.log(auth.currentUser);
   const logout = async () => {
     await signOut(auth);
     navigate("/login");

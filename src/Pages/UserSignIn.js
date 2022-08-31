@@ -22,7 +22,7 @@ export default function UserSignIn() {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        console.log(user);
+
         dispatch({ type: "LOGIN", payload: user });
         navigate("/");
       })

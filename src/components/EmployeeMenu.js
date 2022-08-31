@@ -41,78 +41,91 @@ export default function EmployeeMenu({ menuItem }) {
   };
 
   return (
-    <Container sx={{maxWidth: { xs: "350px",sm:'550px', md: "650px", lg: "800px" }, display:'flex', flexDirection:'column', justifyContent:'center'}}>
+    <Container
+      sx={{
+        maxWidth: { xs: "350px", sm: "550px", md: "650px", lg: "800px" },
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
       {menuItem.map((item) => {
         return (
-          // <Container
-          //   key={item.uuid}
-          //   sx={{
-          //     backgroundColor: "white",
-          //     mt: "12px",
-          //     maxWidth: { xs: "450px", sm:'620px',md: "700px", lg: "800px" },
-          //     borderRadius:'12px'
-
-          //   }}
-          // >
-            <Container key={item.uuid}
+          <Container
+            key={item.uuid}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundColor: "white",
+              mt: "12px",
+              borderRadius: "12px",
+            }}
+          >
+            <img className="profilePhoto" src={item.fileURL}></img>
+            <Container
               sx={{
+                minWidth: { xs: "140px" },
+                minHeight: "120px",
                 display: "flex",
+                flexDirection: "column",
                 alignItems: "center",
-                justifyContent:'center',
-                backgroundColor:'white',
-                mt:'12px',
-                borderRadius:'12px'
-                
+                justifyContent: "center",
               }}
             >
-              <img className="profilePhoto" src={item.fileURL}></img>
-              <Container sx={{minWidth:{xs:'140px'}, minHeight:'120px', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
-                <Typography
-                  sx={{
-                    textAlign: "center",
-                    fontSize: { xs: "1rem", md: "1.2rem" },
-                  }}
-                >
-                  {item.field}
-                </Typography>
-                <Typography
-                  sx={{
-                    textAlign: "center",
-                    fontSize: { xs: "0.8rem", md: "1rem" },
-                  }}
-                >
-                  {item.jobTitle} in {item.location}
-                </Typography>
-                <Typography
-                  sx={{
-                    textAlign: "center",
-                    fontSize: { xs: "0.8rem", md: "1rem" },
-                    mt: "2px",
-                  }}
-                >
-                  {item.firstName} {item.lastName}
-                </Typography>
-                <Typography
-                  sx={{
-                    textAlign: "center",
-                    fontSize: { xs: "0.9rem", md: "1rem" },
-                    mt: "2px",
-                  }}
-                >
-                  Pay rate: {item.payRate}
-                </Typography>
-              </Container>
+              <Typography
+                sx={{
+                  textAlign: "center",
+                  fontSize: { xs: "1rem", md: "1.2rem" },
+                }}
+              >
+                {item.field}
+              </Typography>
+              <Typography
+                sx={{
+                  textAlign: "center",
+                  fontSize: { xs: "0.8rem", md: "1rem" },
+                }}
+              >
+                {item.jobTitle} in {item.location}
+              </Typography>
+              <Typography
+                sx={{
+                  textAlign: "center",
+                  fontSize: { xs: "0.8rem", md: "1rem" },
+                  mt: "2px",
+                }}
+              >
+                {item.firstName} {item.lastName}
+              </Typography>
+              <Typography
+                sx={{
+                  textAlign: "center",
+                  fontSize: { xs: "0.9rem", md: "1rem" },
+                  mt: "2px",
+                }}
+              >
+                Pay rate: {item.payRate}
+              </Typography>
+            </Container>
 
-                <Button sx={{minWidth:{xs:'60px', md:'150px'}, backgroundColor: "#1976d2",
+            <Button
+              sx={{
+                minWidth: { xs: "60px", md: "150px" },
+                backgroundColor: "#1976d2",
                 color: "white",
                 mb: "8px",
                 fontSize: {
                   xs: "0.5rem",
                   sm: "0.8rem",
                   md: "0.8rem",
-                }}}  onClick={() => changeContent(item)}>See More</Button>
-
-            </Container>
+                },
+              }}
+              onClick={() => changeContent(item)}
+            >
+              See More
+            </Button>
+          </Container>
           // </Container>
         );
       })}
