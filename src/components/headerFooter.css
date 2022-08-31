@@ -1,8 +1,8 @@
 /* Navbar */
-.body{
+.body {
   width: 100%;
 }
-.navBar{
+.navBar {
   background-image: linear-gradient(to right, #141e30, #243b55);
   height: 60px;
   width: 100%;
@@ -10,11 +10,10 @@
   align-items: center;
   position: relative;
   padding: 0.5rem 0rem;
-
 }
-.fa-bars{
+.fa-bars {
   border: 0;
-font-size: 1.5rem;
+  font-size: 1.5rem;
   color: white;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
@@ -23,57 +22,52 @@ font-size: 1.5rem;
   right: 10%;
   display: none;
 }
-.pageTitle{
+.pageTitle {
   font-size: 1.8rem;
   float: left;
   color: white;
   overflow: hidden;
- padding: 10px 100px;
+  padding: 10px 100px;
 }
 
-
-.mainNav{
+.mainNav {
   display: flex;
   margin-left: auto;
   /* margin-right: 13%; */
 }
 
-.navItem{
+.navItem {
   font-size: 1.5rem;
- text-decoration: none;
- color: white;
- padding: 10px 40px;
- width: 100%;
+  text-decoration: none;
+  color: white;
+  padding: 10px 40px;
+  width: 100%;
 }
 
-.navItem:hover{
+.navItem:hover {
   text-decoration: underline;
 }
 
-
-
-
-.footerMain{
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    background-image: linear-gradient(to right, #7a8791, #b8bcbd);
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    margin-bottom: 0px;
-    text-align: center;
+.footerMain {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background-image: linear-gradient(to right, #7a8791, #b8bcbd);
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
+  text-align: center;
 }
 
-.footerTitle{
+.footerTitle {
   color: black;
 }
 
 @media only screen and (max-width: 900px) {
-
-  .navBar{
+  .navBar {
     position: fixed;
     width: 100%;
   }
@@ -100,14 +94,12 @@ font-size: 1.5rem;
     display: flex;
     justify-content: center;
     text-align: center;
-
   }
   .navItem:hover {
     background-color: rgb(214, 214, 214);
   }
-  .mainNav.expanded{
+  .mainNav.expanded {
     display: block;
     padding-left: 0;
   }
-
 }

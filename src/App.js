@@ -9,6 +9,7 @@ import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import UserLogin from "./Pages/UserLogin";
 import CreateListing from "./components/CRUD/CreateListing";
+import UserSignIn from "./Pages/UserSignIn";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -24,6 +25,14 @@ function App() {
         <Routes>
           <Route path="/">
             <Route path="/login" element={<UserLogin />} />
+            <Route
+              path="/signin"
+              element={
+                <RequireAuth>
+                  <UserSignIn />
+                </RequireAuth>
+              }
+            />
             <Route
               index
               element={

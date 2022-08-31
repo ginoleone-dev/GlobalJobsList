@@ -7,8 +7,7 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
 import Header from "../components/Header";
-export default function UserLogin() {
-  const [error, setError] = useState(false);
+export default function UserSignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -16,23 +15,20 @@ export default function UserLogin() {
 
   const { dispatch } = useContext(AuthContext);
 
-  const handleLogin = (e) => {
+  const handleSignIn = (e) => {
     e.preventDefault();
 
-    signInWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
+        console.log(user);
         dispatch({ type: "LOGIN", payload: user });
         navigate("/");
       })
       .catch((error) => {
-        setError(true);
+        console.log(error);
       });
-  };
-
-  const handleSignIn = (e) => {
-    e.preventDefault();
   };
 
   return (
@@ -56,8 +52,7 @@ export default function UserLogin() {
             variant={"h5"}
             sx={{ padding: "10px 20px", textAlign: "center" }}
           >
-            Welcome to GlobalJobsList, to log in, please input your account
-            credentials
+            You are creating an account, please type your username and password
           </Typography>
           <TextField
             type="email"
@@ -74,15 +69,10 @@ export default function UserLogin() {
           <Button
             variant={"contained"}
             sx={{ marginTop: "10px" }}
-            onClick={handleLogin}
+            onClick={handleSignIn}
           >
-            Login
+            Sign In
           </Button>
-          {error && (
-            <Typography textAlign={"center"} color={"red"}>
-              Wrong email or password
-            </Typography>
-          )}
           <Container
             sx={{
               display: "flex",
@@ -90,10 +80,7 @@ export default function UserLogin() {
               justifyContent: "center",
               gap: 3,
             }}
-          >
-            <Typography>Don't have an account?</Typography>
-            <Button sx={{ marginTop: "6px" }}>Sign In</Button>
-          </Container>
+          ></Container>
         </Container>
       </Box>
     </>
