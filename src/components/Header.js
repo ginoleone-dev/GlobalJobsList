@@ -1,23 +1,25 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
-import { Link } from 'react-router-dom';
-import { ThemeProvider } from '@mui/material';
-import { createTheme } from '@mui/material';
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
+import MenuItem from "@mui/material/MenuItem";
+import { Link, useNavigate } from "react-router-dom";
+import { ThemeProvider } from "@mui/material";
+import { createTheme } from "@mui/material";
+import { signOut, Auth } from "firebase/auth";
+import { auth } from "../firebase-config";
 
-const pages = ['About', 'Contact'];
+const pages = ["About", "Contact"];
 
 const customTheme = createTheme({
   palette: {
     secondary: {
-      main: '#14213d',
-      contrastText: '#white ',
+      main: "#14213d",
+      contrastText: "#white ",
     },
   },
 });
@@ -25,13 +27,21 @@ const customTheme = createTheme({
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
+  const navigate = useNavigate();
+
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
+  console.log(auth.currentUser);
+  const logout = async () => {
+    await signOut(auth);
+    navigate("/login");
+  };
+
   return (
     <ThemeProvider theme={customTheme}>
-      <AppBar position="static" style={{ width: '100vw' }}>
+      <AppBar position="static" style={{ width: "100vw" }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Typography
@@ -41,35 +51,35 @@ const Header = () => {
               href="/"
               sx={{
                 mr: 2,
-                display: { xs: 'flex', md: 'flex' },
-                fontFamily: 'monospace',
+                display: { xs: "flex", md: "flex" },
+                fontFamily: "monospace",
                 fontWeight: 700,
-                letterSpacing: '.3rem',
-                color: 'inherit',
-                textDecoration: 'none',
-                fontSize: { xs: '0.8rem', sm: '1.3em' },
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+                fontSize: { xs: "0.8rem", sm: "1.3em" },
               }}
             >
               GLOBALJOBSLIST
             </Typography>
 
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorElNav}
                 anchorOrigin={{
-                  vertical: 'bottom',
-                  horizontal: 'left',
+                  vertical: "bottom",
+                  horizontal: "left",
                 }}
                 keepMounted
                 transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'left',
+                  vertical: "top",
+                  horizontal: "left",
                 }}
                 open={Boolean(anchorElNav)}
                 onClose={handleCloseNavMenu}
                 sx={{
-                  display: { xs: 'block', md: 'none' },
+                  display: { xs: "block", md: "none" },
                 }}
               >
                 {pages.map((page) => (
@@ -82,21 +92,32 @@ const Header = () => {
               </Menu>
             </Box>
 
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex' } }}>
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: { xs: "flex", md: "flex" },
+                justifyContent: "end",
+              }}
+            >
               {pages.map((page) => (
                 <Button
                   key={page}
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: 'white', display: 'block' }}
+                  sx={{ my: 2, color: "white", display: "block" }}
                 >
                   <Link
-                    style={{ textDecoration: 'none', color: 'white' }}
+                    style={{ textDecoration: "none", color: "white" }}
                     to={`/${page}`}
                   >
                     {page}
                   </Link>
                 </Button>
               ))}
+              <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+                <Button sx={{ color: "white" }} onClick={logout}>
+                  Sign out
+                </Button>
+              </Box>
             </Box>
           </Toolbar>
         </Container>

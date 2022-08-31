@@ -25,14 +25,7 @@ function App() {
         <Routes>
           <Route path="/">
             <Route path="/login" element={<UserLogin />} />
-            <Route
-              path="/signin"
-              element={
-                <RequireAuth>
-                  <UserSignIn />
-                </RequireAuth>
-              }
-            />
+            <Route path="/signin" element={<UserSignIn />} />
             <Route
               index
               element={

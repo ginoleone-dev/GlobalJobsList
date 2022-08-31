@@ -37,17 +37,16 @@ export default function UserLogin() {
 
   return (
     <>
-      <Header />
       <Box sx={{ height: "100vh", display: "flex", alignItems: "center" }}>
         <Container
           sx={{
             display: "flex",
-            mb: "15vh",
+
             flexDirection: "column",
             maxWidth: {
               xs: "400px",
               md: "500px",
-              marginTop: "10px",
+
               gap: "10px",
             },
           }}
@@ -92,7 +91,12 @@ export default function UserLogin() {
             }}
           >
             <Typography>Don't have an account?</Typography>
-            <Button sx={{ marginTop: "6px" }}>Sign In</Button>
+            <Button
+              sx={{ marginTop: "6px" }}
+              onClick={() => navigate("/signin")}
+            >
+              Sign In
+            </Button>
           </Container>
         </Container>
       </Box>
