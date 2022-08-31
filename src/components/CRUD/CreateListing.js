@@ -301,6 +301,8 @@ export default function CreateListing() {
                         onChange={handleInputChange}
                       >
                         <MenuItem value={"Accounting"}>Accounting</MenuItem>
+                        <MenuItem value={"Architecture"}>Architecture</MenuItem>
+                        <MenuItem value={"Design"}>Design</MenuItem>
                         <MenuItem value={"Business"}>Business</MenuItem>
                         <MenuItem value={"Finance"}>Finance</MenuItem>
                         <MenuItem value={"Marketing"}>Marketing</MenuItem>
