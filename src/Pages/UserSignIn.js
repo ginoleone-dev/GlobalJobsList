@@ -52,6 +52,7 @@ export default function UserSignIn() {
           >
             You are creating an account, please type your username and password
           </Typography>
+
           <TextField
             type="email"
             placeholder="Email"
@@ -64,6 +65,11 @@ export default function UserSignIn() {
             variant="outlined"
             onChange={(e) => setPassword(e.target.value)}
           ></TextField>
+          <Typography
+            sx={{ fontSize: { xs: "0.8rem", sm: "1rem" }, ml: "8px" }}
+          >
+            Password must be 6 characters or longer
+          </Typography>
           <Button
             variant={"contained"}
             sx={{ marginTop: "10px" }}
