@@ -56,7 +56,7 @@ const Header = () => {
                 letterSpacing: ".3rem",
                 color: "inherit",
                 textDecoration: "none",
-                fontSize: { xs: "0.8rem", sm: "1.3em" },
+                fontSize: { xs: "0.7rem", sm: "1.3em" },
               }}
             >
               GLOBALJOBSLIST

@@ -20,12 +20,13 @@ export default function EmployerMenu({ menuItem }) {
     setModalContent([item]);
     setModalToggle(!modalToggle);
   };
+
   const style = {
     position: "absolute",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: { xs: "400px", md: "500px" },
+    width: { xs: "290px", md: "500px" },
     bgcolor: "background.paper",
     border: "2px solid #000",
     boxShadow: 24,
@@ -36,15 +37,15 @@ export default function EmployerMenu({ menuItem }) {
   return (
     <Container
       sx={{
-        maxWidth: { xs: "350px", sm: "550px", md: "650px", lg: "800px" },
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
+        alignItems: "center",
       }}
     >
       {menuItem.map((item) => {
         return (
-          <Container
+          <Box
             key={item.uuid}
             sx={{
               display: "flex",
@@ -52,74 +53,83 @@ export default function EmployerMenu({ menuItem }) {
               justifyContent: "center",
               backgroundColor: "white",
               mt: "12px",
+              minWidth: { xs: "350px", lg: "700px" },
+              minHeight: { xs: "150px" },
               borderRadius: "12px",
             }}
           >
-            <img className="profilePhoto" src={item.fileURL}></img>
             <Container
               sx={{
-                minWidth: { xs: "140px" },
-                minHeight: "120px",
                 display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
                 justifyContent: "center",
+                alignItems: "center",
               }}
             >
-              <Typography
+              <img className="profilePhoto" src={item.fileURL}></img>
+              <Container
                 sx={{
-                  textAlign: "center",
-                  fontSize: { xs: "1rem", md: "1.2rem" },
+                  minWidth: { xs: "140px", lg: "450px" },
+                  minHeight: "120px",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
                 }}
               >
-                {item.field}
-              </Typography>
-              <Typography
-                sx={{
-                  textAlign: "center",
-                  fontSize: { xs: "0.8rem", md: "1rem" },
-                }}
-              >
-                Looking for {item.jobTitle} in {item.location}
-              </Typography>
-              <Typography
-                sx={{
-                  textAlign: "center",
-                  fontSize: { xs: "0.8rem", md: "1rem" },
-                  mt: "2px",
-                }}
-              >
-                {item.firstName} {item.lastName}
-              </Typography>
-              <Typography
-                sx={{
-                  textAlign: "center",
-                  fontSize: { xs: "0.9rem", md: "1rem" },
-                  mt: "2px",
-                }}
-              >
-                Pay rate: {item.payRate}
-              </Typography>
-            </Container>
+                <Typography
+                  sx={{
+                    textAlign: "center",
+                    fontSize: { xs: "1rem", md: "1.2rem" },
+                  }}
+                >
+                  {item.field}
+                </Typography>
+                <Typography
+                  sx={{
+                    textAlign: "center",
+                    fontSize: { xs: "0.8rem", md: "1rem" },
+                  }}
+                >
+                  Looking for {item.jobTitle} in {item.location}
+                </Typography>
+                <Typography
+                  sx={{
+                    textAlign: "center",
+                    fontSize: { xs: "0.8rem", md: "1rem" },
+                    mt: "2px",
+                  }}
+                >
+                  {item.firstName} {item.lastName}
+                </Typography>
+                <Typography
+                  sx={{
+                    textAlign: "center",
+                    fontSize: { xs: "0.9rem", md: "1rem" },
+                    mt: "2px",
+                  }}
+                >
+                  Pay rate: {item.payRate}
+                </Typography>
+              </Container>
 
-            <Button
-              sx={{
-                minWidth: { xs: "60px", md: "150px" },
-                backgroundColor: "#1976d2",
-                color: "white",
-                mb: "8px",
-                fontSize: {
-                  xs: "0.5rem",
-                  sm: "0.8rem",
-                  md: "0.8rem",
-                },
-              }}
-              onClick={() => changeContent(item)}
-            >
-              See More
-            </Button>
-          </Container>
-          // </Container>
+              <Button
+                sx={{
+                  minWidth: { xs: "60px", md: "150px" },
+                  backgroundColor: "#1976d2",
+                  color: "white",
+                  mb: "8px",
+                  fontSize: {
+                    xs: "0.5rem",
+                    sm: "0.8rem",
+                    md: "0.8rem",
+                  },
+                }}
+                onClick={() => changeContent(item)}
+              >
+                See More
+              </Button>
+            </Container>
+          </Box>
         );
       })}
 

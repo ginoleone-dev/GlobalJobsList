@@ -81,7 +81,7 @@ export default function Main() {
   };
 
   return (
-    <>
+    <Box>
       <Header />
       <Box minHeight={700}>
         <Container>
@@ -171,8 +171,7 @@ export default function Main() {
             </Container>
           </Container>
         </Container>
-        <Footer />
       </Box>
-    </>
+    </Box>
   );
 }
