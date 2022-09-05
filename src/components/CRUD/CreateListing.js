@@ -92,37 +92,44 @@ export default function CreateListing() {
 
       const refStorage = storageRef(storage, userImage.file.name);
       const uploadTask = uploadBytesResumable(refStorage, userImage.file);
+      const fileType = userImage.file.type.includes("image");
 
-      uploadTask.on(
-        "state_changed",
-        (snapshot) => {
-          const progress =
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          console.log("Upload is " + progress + "% done");
-          setPercentage(progress);
-          switch (snapshot.state) {
-            case "paused":
-              console.log("Upload is paused");
-              break;
-            case "running":
-              console.log("Upload is running");
-              break;
-            default:
-              break;
-          }
-        },
-        (error) => {
-          console.log(error);
-        },
-        () => {
-          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            setUserInfo((values) => {
-              return { ...values, fileURL: downloadURL };
+      if (fileType === true) {
+        uploadTask.on(
+          "state_changed",
+          (snapshot) => {
+            const progress =
+              (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            // console.log("Upload is " + progress + "% done");
+            setPercentage(progress);
+            switch (snapshot.state) {
+              case "paused":
+                console.log("Upload is paused");
+                break;
+              case "running":
+                // console.log("Upload is running");
+                break;
+              default:
+                break;
+            }
+          },
+          (error) => {
+            console.log(error);
+          },
+          () => {
+            getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+              setUserInfo((values) => {
+                return { ...values, fileURL: downloadURL };
+              });
             });
-          });
-        }
-      );
+          }
+        );
+      } else {
+        setUserImage("");
+        alert("The file must be jpg, jpeg or png type");
+      }
     };
+
     userImage && uploadFile();
   }, [userImage]);
 
@@ -271,6 +278,7 @@ export default function CreateListing() {
                   <Typography mb={0.5}>Upload your profile picture</Typography>
                   <input
                     type="file"
+                    accept="image/jpeg, image/png"
                     onChange={pushImage}
                     name="file"
                     style={{
