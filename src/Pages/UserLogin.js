@@ -23,16 +23,14 @@ export default function UserLogin() {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
+
         dispatch({ type: "LOGIN", payload: user });
+
         navigate("/");
       })
       .catch((error) => {
         setError(true);
       });
-  };
-
-  const handleSignIn = (e) => {
-    e.preventDefault();
   };
 
   return (

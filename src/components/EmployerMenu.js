@@ -46,7 +46,7 @@ export default function EmployerMenu({ menuItem }) {
       {menuItem.map((item) => {
         return (
           <Box
-            key={item.uuid}
+            key={item.postId}
             sx={{
               display: "flex",
               alignItems: "center",
@@ -57,6 +57,7 @@ export default function EmployerMenu({ menuItem }) {
               minHeight: { xs: "150px" },
               borderRadius: "12px",
             }}
+            onClick={() => changeContent(item)}
           >
             <Container
               sx={{
@@ -137,7 +138,11 @@ export default function EmployerMenu({ menuItem }) {
         <Container>
           {modalContent.map((modal) => {
             return (
-              <Modal key={modal.uuid} open={modalToggle} onClose={handleClose}>
+              <Modal
+                key={modal.postId}
+                open={modalToggle}
+                onClose={handleClose}
+              >
                 <Box sx={style}>
                   <Container
                     sx={{

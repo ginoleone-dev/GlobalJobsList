@@ -2,15 +2,12 @@ import React, { useState, useEffect } from "react";
 import Buttons from "./Buttons";
 import EmployeeMenu from "./EmployeeMenu";
 import EmployerMenu from "./EmployerMenu";
-import Footer from "./Footer";
+
 import { rdb } from "../firebase-config";
-import { onValue, ref, set } from "firebase/database";
-import { Box, ButtonBase, Container, Typography } from "@mui/material";
-import { uid } from "uid";
-import CreateListing from "./CRUD/CreateListing";
+import { onValue, ref } from "firebase/database";
+import { Box, Container, Typography } from "@mui/material";
+
 import Header from "./Header";
-import { Button } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 import PostCallToAction from "./PostCallToAction";
 
 export default function Main() {
@@ -22,6 +19,7 @@ export default function Main() {
   const [buttonsEmployer, setButtonsEmployer] = useState([]);
   const [menuItemEmployee, setMenuItemEmployee] = useState([]);
   const [menuItemEmployer, setMenuItemEmployer] = useState([]);
+
   // Read
 
   useEffect(() => {
@@ -99,6 +97,7 @@ export default function Main() {
               variant="h2"
               fontWeight={500}
               marginTop="20px"
+              textAlign={"center"}
               fontSize={{ xs: "1.8rem", sm: "1.9rem", md: "2rem" }}
             >
               Looking to hire someone?

@@ -12,6 +12,8 @@ import { ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material";
 import { signOut, Auth } from "firebase/auth";
 import { auth } from "../firebase-config";
+import { AuthContext } from "../Context/AuthContext";
+import { useContext } from "react";
 
 const pages = ["About", "Contact"];
 
@@ -33,8 +35,11 @@ const Header = () => {
     setAnchorElNav(null);
   };
 
+  const { dispatch } = useContext(AuthContext);
+
   const logout = async () => {
     await signOut(auth);
+    dispatch({ type: "LOGOUT" });
     navigate("/login");
   };
 

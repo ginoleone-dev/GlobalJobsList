@@ -97,10 +97,8 @@ body {
 }
 
 .profilePhoto {
-  height: 100px;
-  /* max-width: 100px; */
+  max-width: 80px;
   border-radius: 40px;
-
 }
 
 .listing-mainbox {

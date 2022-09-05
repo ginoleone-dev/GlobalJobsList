@@ -20,7 +20,7 @@ import {
 import { rdb } from "../../firebase-config";
 import { ref, set } from "firebase/database";
 import { uid } from "uid";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { storage } from "../../firebase-config";
 import { ref as storageRef } from "firebase/storage";
 import {
@@ -30,6 +30,7 @@ import {
 } from "firebase/storage";
 import Header from "../Header";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthContext";
 
 export default function CreateListing() {
   const style = {
@@ -83,6 +84,8 @@ export default function CreateListing() {
       });
   };
 
+  // Uploading File
+
   useEffect(() => {
     const uploadFile = () => {
       const name = new Date().getTime() + userImage.file.name;
@@ -123,19 +126,26 @@ export default function CreateListing() {
     userImage && uploadFile();
   }, [userImage]);
 
+  // User context
+
+  const currentUser = useContext(AuthContext);
+
   // Deploy to database function
   const deployUserInput = () => {
-    const uuid = uid();
+    const postId = uid();
+    const userId = currentUser.currentUser.uid;
 
     if (roleValue === "employee") {
-      set(ref(rdb, `/0/employee/${uuid}`), {
+      set(ref(rdb, `/0/employee/${postId}`), {
         ...userInfo,
-        uuid,
+        postId,
+        userId,
       });
     } else {
-      set(ref(rdb, `/1/employers/${uuid}`), {
+      set(ref(rdb, `/1/employers/${postId}`), {
         ...userInfo,
-        uuid,
+        postId,
+        userId,
       });
     }
 
@@ -168,10 +178,12 @@ export default function CreateListing() {
       <Header />
       <Container
         sx={{
-          mt: "50px",
+          mt: "30px",
           display: "flex",
           flexDirection: "column",
-          width: { xs: "450px", md: "800px" },
+          justifyContent: "center",
+          alignItems: "center",
+          width: { xs: "380px", sm: "500px", md: "800px" },
           gap: "12px",
         }}
       >
