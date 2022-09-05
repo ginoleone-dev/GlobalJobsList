@@ -352,7 +352,7 @@ export default function CreateListing() {
                 </Grid>
                 <Grid xs={6} sm={6} item>
                   <TextField
-                    label="Pay Rate"
+                    label="Pay Rate ($/h)"
                     variant="outlined"
                     name="payRate"
                     value={userInfo.payRate}

@@ -109,7 +109,7 @@ export default function EmployerMenu({ menuItem }) {
                     mt: "2px",
                   }}
                 >
-                  Pay rate: {item.payRate}
+                  Pay rate: ${item.payRate}/h
                 </Typography>
               </Container>
 
