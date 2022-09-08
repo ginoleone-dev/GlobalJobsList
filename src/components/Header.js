@@ -12,8 +12,9 @@ import { ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material";
 import { signOut, Auth } from "firebase/auth";
 import { auth } from "../firebase-config";
-import { AuthContext } from "../Context/AuthContext";
-import { useContext } from "react";
+// import { AuthContext } from "../Context/AuthContext";
+import { useContext, useState } from "react";
+import { UserAuth } from "../Context/AuthContext";
 
 const pages = ["About", "Contact"];
 
@@ -27,20 +28,25 @@ const customTheme = createTheme({
 });
 
 const Header = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const { logout } = UserAuth();
+
+  const Navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+      Navigate("/login");
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
+
+  const [anchorElNav, setAnchorElNav] = useState(null);
 
   const navigate = useNavigate();
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-
-  const { dispatch } = useContext(AuthContext);
-
-  const logout = async () => {
-    await signOut(auth);
-    dispatch({ type: "LOGOUT" });
-    navigate("/login");
   };
 
   return (
@@ -118,7 +124,7 @@ const Header = () => {
                 </Button>
               ))}
               <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-                <Button sx={{ color: "white" }} onClick={logout}>
+                <Button sx={{ color: "white" }} onClick={handleLogout}>
                   Sign out
                 </Button>
               </Box>

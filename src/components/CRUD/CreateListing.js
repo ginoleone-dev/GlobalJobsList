@@ -30,7 +30,8 @@ import {
 } from "firebase/storage";
 import Header from "../Header";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../Context/AuthContext";
+import { UserAuth } from "../../Context/AuthContext";
+// import { AuthContext } from "../../Context/AuthContext";
 
 export default function CreateListing() {
   const style = {
@@ -93,7 +94,6 @@ export default function CreateListing() {
       const refStorage = storageRef(storage, userImage.file.name);
       const uploadTask = uploadBytesResumable(refStorage, userImage.file);
       const fileType = userImage.file.type.includes("image");
-
       if (fileType === true) {
         uploadTask.on(
           "state_changed",
@@ -135,12 +135,12 @@ export default function CreateListing() {
 
   // User context
 
-  const currentUser = useContext(AuthContext);
+  const { user } = UserAuth();
 
   // Deploy to database function
   const deployUserInput = () => {
     const postId = uid();
-    const userId = currentUser.currentUser.uid;
+    const userId = user.uid;
 
     if (roleValue === "employee") {
       set(ref(rdb, `/0/employee/${postId}`), {

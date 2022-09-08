@@ -1,36 +1,28 @@
 import React, { useContext, useState } from "react";
 import { Typography, Container, Button, TextField, Box } from "@mui/material";
-import { auth } from "../firebase-config";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../Context/AuthContext";
+import { UserAuth } from "../Context/AuthContext";
+
 import Header from "../components/Header";
 export default function UserLogin() {
+  const { logIn } = UserAuth();
+
   const [error, setError] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
 
-  const { dispatch } = useContext(AuthContext);
-
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-
-        dispatch({ type: "LOGIN", payload: user });
-
-        navigate("/");
-      })
-      .catch((error) => {
-        setError(true);
-      });
+    setError("");
+    try {
+      await logIn(email, password);
+      navigate("/");
+    } catch (e) {
+      setError.apply(e.message);
+      console.log(e.message);
+    }
   };
 
   return (

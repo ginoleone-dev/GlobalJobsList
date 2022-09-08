@@ -12,11 +12,11 @@ import CreateListing from "./components/CRUD/CreateListing";
 import UserSignIn from "./Pages/UserSignIn";
 
 function App() {
-  const { currentUser } = useContext(AuthContext);
+  // const { currentUser } = useContext(AuthContext);
 
-  const RequireAuth = ({ children }) => {
-    return currentUser ? children : <Navigate to={"/login"} />;
-  };
+  // const RequireAuth = ({ children }) => {
+  //   return currentUser ? children : <Navigate to={"/login"} />;
+  // };
 
   return (
     <Box sx={{ minHeight: "100vh" }}>
@@ -28,33 +28,33 @@ function App() {
             <Route
               index
               element={
-                <RequireAuth>
-                  <Main />
-                </RequireAuth>
+                // <RequireAuth>
+                <Main />
+                // </RequireAuth>
               }
             />
             <Route
               path="/about"
               element={
-                <RequireAuth>
-                  <About />
-                </RequireAuth>
+                // <RequireAuth>
+                <About />
+                // </RequireAuth>
               }
             />
             <Route
               path="/contact"
               element={
-                <RequireAuth>
-                  <Contact />
-                </RequireAuth>
+                // <RequireAuth>
+                <Contact />
+                // </RequireAuth>
               }
             />
             <Route
               path="/post"
               element={
-                <RequireAuth>
-                  <CreateListing />
-                </RequireAuth>
+                // <RequireAuth>
+                <CreateListing />
+                // </RequireAuth>
               }
             />
           </Route>
