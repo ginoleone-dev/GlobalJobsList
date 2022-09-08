@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Typography, Container, Button, TextField, Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { UserAuth } from "../Context/AuthContext";
+import photo from "../images/best-remote-jobs-hero.jpg";
 
 import Header from "../components/Header";
 export default function UserLogin() {
@@ -27,7 +28,38 @@ export default function UserLogin() {
 
   return (
     <>
-      <Box sx={{ height: "100vh", display: "flex", alignItems: "center" }}>
+      <Container
+        sx={{
+          height: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "end",
+            width: "500px",
+            height: "380px",
+            backgroundImage: `url(${photo})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            mb: "24px",
+          }}
+        >
+          <Typography
+            color={"black"}
+            fontSize={"30px"}
+            backgroundColor={"rgba(255, 255, 255, 0.8);"}
+            width={"100%"}
+            textAlign={"center"}
+          >
+            Connect, Discover, Grow.
+          </Typography>
+        </Box>
         <Container
           sx={{
             display: "flex",
@@ -62,7 +94,7 @@ export default function UserLogin() {
           ></TextField>
           <Button
             variant={"contained"}
-            sx={{ marginTop: "10px" }}
+            sx={{ marginTop: "10px", backgroundColor: "#1976d2" }}
             onClick={handleLogin}
           >
             Login
@@ -82,14 +114,20 @@ export default function UserLogin() {
           >
             <Typography>Don't have an account?</Typography>
             <Button
-              sx={{ marginTop: "6px" }}
+              sx={{
+                marginTop: "6px",
+                color: "#2c3e50",
+                "&:hover": {
+                  backgroundColor: "white",
+                },
+              }}
               onClick={() => navigate("/signin")}
             >
               Sign In
             </Button>
           </Container>
         </Container>
-      </Box>
+      </Container>
     </>
   );
 }
