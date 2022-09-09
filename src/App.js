@@ -10,14 +10,10 @@ import Contact from "./Pages/Contact";
 import UserLogin from "./Pages/UserLogin";
 import CreateListing from "./components/CRUD/CreateListing";
 import UserSignIn from "./Pages/UserSignIn";
+import { UserAuth } from "./Context/AuthContext";
+import ProtectedRoute from "./Context/ProtectedRoute";
 
 function App() {
-  // const { currentUser } = useContext(AuthContext);
-
-  // const RequireAuth = ({ children }) => {
-  //   return currentUser ? children : <Navigate to={"/login"} />;
-  // };
-
   return (
     <Box sx={{ minHeight: "100vh" }}>
       <BrowserRouter>
@@ -28,33 +24,33 @@ function App() {
             <Route
               index
               element={
-                // <RequireAuth>
-                <Main />
-                // </RequireAuth>
+                <ProtectedRoute>
+                  <Main />
+                </ProtectedRoute>
               }
             />
             <Route
               path="/about"
               element={
-                // <RequireAuth>
-                <About />
-                // </RequireAuth>
+                <ProtectedRoute>
+                  <About />
+                </ProtectedRoute>
               }
             />
             <Route
               path="/contact"
               element={
-                // <RequireAuth>
-                <Contact />
-                // </RequireAuth>
+                <ProtectedRoute>
+                  <Contact />
+                </ProtectedRoute>
               }
             />
             <Route
               path="/post"
               element={
-                // <RequireAuth>
-                <CreateListing />
-                // </RequireAuth>
+                <ProtectedRoute>
+                  <CreateListing />
+                </ProtectedRoute>
               }
             />
           </Route>
