@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Typography, Container, Button, TextField, Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { UserAuth } from "../Context/AuthContext";
+import photo from "../images/best-remote-jobs-hero.jpg";
 
 export default function UserSignIn() {
   const [email, setEmail] = useState("");
@@ -24,7 +25,38 @@ export default function UserSignIn() {
 
   return (
     <>
-      <Box sx={{ height: "100vh", display: "flex", alignItems: "center" }}>
+      <Container
+        sx={{
+          height: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "end",
+            width: "500px",
+            height: "380px",
+            backgroundImage: `url(${photo})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            mb: "24px",
+          }}
+        >
+          <Typography
+            color={"black"}
+            fontSize={"30px"}
+            backgroundColor={"rgba(255, 255, 255, 0.8);"}
+            width={"100%"}
+            textAlign={"center"}
+          >
+            Connect, Discover, Grow.
+          </Typography>
+        </Box>
         <Container
           sx={{
             display: "flex",
@@ -63,7 +95,7 @@ export default function UserSignIn() {
           </Typography>
           <Button
             variant={"contained"}
-            sx={{ marginTop: "10px" }}
+            sx={{ marginTop: "10px", backgroundColor: "#2c3e50" }}
             onClick={handleSignIn}
           >
             Sign In
@@ -73,13 +105,14 @@ export default function UserSignIn() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+
               gap: 3,
             }}
           >
             <Button onClick={() => navigate("/login")}>Back to Login</Button>
           </Container>
         </Container>
-      </Box>
+      </Container>
     </>
   );
 }

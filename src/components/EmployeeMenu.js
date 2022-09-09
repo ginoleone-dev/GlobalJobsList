@@ -62,6 +62,12 @@ export default function EmployeeMenu({ menuItem }) {
               minWidth: { xs: "350px", lg: "700px" },
               minHeight: { xs: "150px" },
               borderRadius: "12px",
+              cursor: "pointer",
+              transition: "all .2s ease-in-out",
+              "&:hover": {
+                backgroundColor: "white",
+                transform: "scale(1.02)",
+              },
             }}
             onClick={() => changeContent(item)}
           >
