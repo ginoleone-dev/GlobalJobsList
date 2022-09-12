@@ -58,7 +58,6 @@ const Header = () => {
               variant="h6"
               noWrap
               component="a"
-              href="/"
               sx={{
                 mr: 2,
                 display: { xs: "flex", md: "flex" },
@@ -70,7 +69,9 @@ const Header = () => {
                 fontSize: { xs: "0.7rem", sm: "1.3em" },
               }}
             >
-              GLOBALJOBSLIST
+              <Link to={"/"} style={{ textDecoration: "none", color: "white" }}>
+                GLOBALJOBSLIST
+              </Link>
             </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>

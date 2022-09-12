@@ -32,7 +32,7 @@ export default function EmployeeMenu({ menuItem }) {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: { xs: "290px", md: "500px" },
+    width: { xs: "350px", sm: "550px", md: "800px" },
     bgcolor: "background.paper",
     border: "2px solid #000",
     boxShadow: 24,
@@ -59,7 +59,7 @@ export default function EmployeeMenu({ menuItem }) {
               justifyContent: "center",
               backgroundColor: "white",
               mt: "12px",
-              minWidth: { xs: "350px", lg: "700px" },
+              minWidth: { xs: "380px", lg: "700px" },
               minHeight: { xs: "150px" },
               borderRadius: "12px",
               cursor: "pointer",
@@ -136,6 +136,7 @@ export default function EmployeeMenu({ menuItem }) {
                     sm: "0.8rem",
                     md: "0.8rem",
                   },
+                  display: { xs: "none", sm: "none", md: "block" },
                 }}
                 onClick={() => changeContent(item)}
               >

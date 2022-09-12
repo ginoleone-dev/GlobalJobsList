@@ -1,16 +1,14 @@
 import { Box } from "@mui/material";
 import React from "react";
 import ResponsiveAppBar from "./components/Header";
-import { AuthContextProvider, AuthContext } from "./Context/AuthContext";
-import { useContext } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from "./components/Main";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import UserLogin from "./Pages/UserLogin";
 import CreateListing from "./components/CRUD/CreateListing";
 import UserSignIn from "./Pages/UserSignIn";
-import { UserAuth } from "./Context/AuthContext";
 import ProtectedRoute from "./Context/ProtectedRoute";
 
 function App() {
