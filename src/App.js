@@ -10,6 +10,7 @@ import UserLogin from "./Pages/UserLogin";
 import CreateListing from "./components/CRUD/CreateListing";
 import UserSignIn from "./Pages/UserSignIn";
 import ProtectedRoute from "./Context/ProtectedRoute";
+import Posts from "./Pages/posts";
 
 function App() {
   return (
@@ -19,27 +20,14 @@ function App() {
           <Route path="/">
             <Route path="/login" element={<UserLogin />} />
             <Route path="/signin" element={<UserSignIn />} />
+            <Route index element={<Main />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
             <Route
-              index
+              path="/posts"
               element={
                 <ProtectedRoute>
-                  <Main />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/about"
-              element={
-                <ProtectedRoute>
-                  <About />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/contact"
-              element={
-                <ProtectedRoute>
-                  <Contact />
+                  <Posts />
                 </ProtectedRoute>
               }
             />

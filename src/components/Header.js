@@ -29,7 +29,7 @@ const customTheme = createTheme({
 
 const Header = () => {
   const { logout } = UserAuth();
-
+  const { user } = UserAuth();
   const Navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -54,10 +54,8 @@ const Header = () => {
       <AppBar position="static" style={{ width: "100vw" }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <Typography
+            <Button
               variant="h6"
-              noWrap
-              component="a"
               sx={{
                 mr: 2,
                 display: { xs: "flex", md: "flex" },
@@ -72,36 +70,7 @@ const Header = () => {
               <Link to={"/"} style={{ textDecoration: "none", color: "white" }}>
                 GLOBALJOBSLIST
               </Link>
-            </Typography>
-
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: "block", md: "none" },
-                }}
-              >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">
-                      <Link to={`/${page}`}>{page}</Link>
-                    </Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
+            </Button>
 
             <Box
               sx={{
@@ -113,7 +82,6 @@ const Header = () => {
               {pages.map((page) => (
                 <Button
                   key={page}
-                  onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: "white", display: "block" }}
                 >
                   <Link
@@ -125,9 +93,18 @@ const Header = () => {
                 </Button>
               ))}
               <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-                <Button sx={{ color: "white" }} onClick={handleLogout}>
-                  Sign out
-                </Button>
+                {user ? (
+                  <Button sx={{ color: "white" }} onClick={handleLogout}>
+                    Sign out
+                  </Button>
+                ) : (
+                  <Button
+                    sx={{ color: "white" }}
+                    onClick={() => Navigate("/login")}
+                  >
+                    Log In
+                  </Button>
+                )}
               </Box>
             </Box>
           </Toolbar>
