@@ -35,18 +35,10 @@ const Header = () => {
   const handleLogout = async () => {
     try {
       await logout();
-      Navigate("/login");
+      // Navigate("/login");|
     } catch (e) {
       console.log(e.message);
     }
-  };
-
-  const [anchorElNav, setAnchorElNav] = useState(null);
-
-  const navigate = useNavigate();
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
   };
 
   return (
