@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Typography, Container, Button, TextField, Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { UserAuth } from "../Context/AuthContext";
@@ -22,7 +22,6 @@ export default function UserLogin() {
       navigate("/");
     } catch (e) {
       setError.apply(e.message);
-      console.log(e.message);
     }
   };
 
@@ -77,8 +76,8 @@ export default function UserLogin() {
             variant={"h5"}
             sx={{ padding: "10px 20px", textAlign: "center" }}
           >
-            Welcome to GlobalJobsList, to log in, please input your account
-            credentials
+            Welcome to GlobalJobsList, you can continue as a guest, if you want
+            to create a job post, please log in or register your new account.
           </Typography>
           <TextField
             type="email"
@@ -123,7 +122,29 @@ export default function UserLogin() {
               }}
               onClick={() => navigate("/signin")}
             >
-              Sign In
+              Register
+            </Button>
+          </Container>
+          <Container
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: 3,
+            }}
+          >
+            <Typography>Continue as a guest</Typography>
+            <Button
+              sx={{
+                marginTop: "6px",
+                color: "#2c3e50",
+                "&:hover": {
+                  backgroundColor: "white",
+                },
+              }}
+              onClick={() => navigate("/")}
+            >
+              Continue
             </Button>
           </Container>
         </Container>

@@ -1,17 +1,16 @@
 import { Box } from "@mui/material";
 import React from "react";
 import ResponsiveAppBar from "./components/Header";
-import { AuthContextProvider, AuthContext } from "./Context/AuthContext";
-import { useContext } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from "./components/Main";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import UserLogin from "./Pages/UserLogin";
 import CreateListing from "./components/CRUD/CreateListing";
 import UserSignIn from "./Pages/UserSignIn";
-import { UserAuth } from "./Context/AuthContext";
 import ProtectedRoute from "./Context/ProtectedRoute";
+import Posts from "./Pages/posts";
 
 function App() {
   return (
@@ -21,27 +20,14 @@ function App() {
           <Route path="/">
             <Route path="/login" element={<UserLogin />} />
             <Route path="/signin" element={<UserSignIn />} />
+            <Route index element={<Main />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
             <Route
-              index
+              path="/posts"
               element={
                 <ProtectedRoute>
-                  <Main />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/about"
-              element={
-                <ProtectedRoute>
-                  <About />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/contact"
-              element={
-                <ProtectedRoute>
-                  <Contact />
+                  <Posts />
                 </ProtectedRoute>
               }
             />
