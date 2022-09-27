@@ -15,6 +15,7 @@ import { auth } from "../firebase-config";
 // import { AuthContext } from "../Context/AuthContext";
 import { useContext, useState } from "react";
 import { UserAuth } from "../Context/AuthContext";
+import SideBarButton from "./Sidebar";
 
 const pages = ["About", "Contact"];
 
@@ -50,24 +51,35 @@ const Header = () => {
               variant="h6"
               sx={{
                 mr: 2,
-                display: { xs: "flex", md: "flex" },
+                display: { xs: "flex" },
                 fontFamily: "monospace",
                 fontWeight: 700,
                 letterSpacing: ".3rem",
                 color: "inherit",
                 textDecoration: "none",
-                fontSize: { xs: "0.7rem", sm: "1.3em" },
+                fontSize: { xs: "1rem", sm: "1.3em" },
               }}
             >
               <Link to={"/"} style={{ textDecoration: "none", color: "white" }}>
                 GLOBALJOBSLIST
               </Link>
             </Button>
-
+            {/* Only used 900px and lower */}
+            <Box
+              sx={{
+                display: "block",
+                width: "60%",
+                justifyContent: "end",
+                alignItems: "center",
+                mr: "10px",
+              }}
+            >
+              <SideBarButton />
+            </Box>
             <Box
               sx={{
                 flexGrow: 1,
-                display: { xs: "flex", md: "flex" },
+                display: { xs: "none", md: "flex" },
                 justifyContent: "end",
               }}
             >

@@ -9,6 +9,7 @@ import { Box, Container, Typography } from "@mui/material";
 
 import Header from "./Header";
 import PostCallToAction from "./PostCallToAction";
+import Sidebar from "./Sidebar";
 
 export default function Main() {
   const [employeeList, setEmployeeList] = useState([]);
@@ -81,92 +82,97 @@ export default function Main() {
   return (
     <Box>
       <Header />
-      <Box minHeight={700}>
-        <Container>
-          <PostCallToAction />
-          <Container
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "flex-start",
-              alignItems: "center",
-            }}
-          >
-            <Typography
-              className="titleHire"
-              variant="h2"
-              fontWeight={500}
-              marginTop="20px"
-              textAlign={"center"}
-              fontSize={{ xs: "1.8rem", sm: "1.9rem", md: "2rem" }}
-            >
-              Looking to hire someone?
-            </Typography>
-            <Typography
-              variant="h4"
-              marginTop="10px"
-              fontSize={{ xs: "1rem", sm: "1.2rem", md: "1.2rem" }}
-            >
-              A quality hire reduces fires!
-            </Typography>
-          </Container>
-          <Container className="employee">
-            {loaded ? (
-              <Buttons
-                button={buttonsEmployee}
-                filter={filterEmployee}
-                loaded={loaded}
-              />
-            ) : (
-              <Typography textAlign={"center"}>Loading</Typography>
-            )}
+      <Box minHeight={700} sx={{ display: "flex", flexDirection: "column" }}>
+        <Container
+          sx={{ display: "flex", flexDirection: { xs: "column", md: "row" } }}
+        >
+          {/* SideBar */}
 
-            <Container className="listingEmployee">
-              {loaded && (
-                <EmployeeMenu menuItem={menuItemEmployee} loaded={loaded} />
-              )}
+          <Container>
+            <Container
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                alignItems: "center",
+              }}
+            >
+              <Typography
+                className="titleHire"
+                variant="h2"
+                fontWeight={500}
+                marginTop="20px"
+                textAlign={"center"}
+                fontSize={{ xs: "1.8rem", sm: "1.9rem", md: "2rem" }}
+              >
+                Looking to hire someone?
+              </Typography>
+              <Typography
+                variant="h4"
+                marginTop="10px"
+                fontSize={{ xs: "1rem", sm: "1.2rem", md: "1.2rem" }}
+              >
+                A quality hire reduces fires!
+              </Typography>
             </Container>
-          </Container>
-          <Container
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "flex-start",
-              alignItems: "center",
-            }}
-          >
-            <Typography
-              className="titleHire"
-              variant="h2"
-              fontWeight={500}
-              marginTop="20px"
-              fontSize={{ xs: "1.8rem", sm: "1.9rem", md: "2rem" }}
-            >
-              Looking for a job?
-            </Typography>
-            <Typography
-              variant="h4"
-              marginTop="10px"
-              fontSize={{ xs: "1rem", sm: "1.2rem", md: "1.2rem" }}
-            >
-              Find your next big opportunity!
-            </Typography>
-          </Container>
-          <Container className="employer">
-            {loaded ? (
-              <Buttons
-                button={buttonsEmployer}
-                filter={filterEmployer}
-                loaded={loaded}
-              />
-            ) : (
-              <Typography textAlign={"center"}>Loading</Typography>
-            )}
-
-            <Container className="listingEmployee">
-              {loaded && (
-                <EmployerMenu menuItem={menuItemEmployer} loaded={loaded} />
+            <Container className="employee">
+              {loaded ? (
+                <Buttons
+                  button={buttonsEmployee}
+                  filter={filterEmployee}
+                  loaded={loaded}
+                />
+              ) : (
+                <Typography textAlign={"center"}>Loading</Typography>
               )}
+
+              <Container className="listingEmployee">
+                {loaded && (
+                  <EmployeeMenu menuItem={menuItemEmployee} loaded={loaded} />
+                )}
+              </Container>
+            </Container>
+            <Container
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                alignItems: "center",
+              }}
+            >
+              <Typography
+                className="titleHire"
+                variant="h2"
+                fontWeight={500}
+                marginTop="20px"
+                fontSize={{ xs: "1.8rem", sm: "1.9rem", md: "2rem" }}
+              >
+                Looking for a job?
+              </Typography>
+              <Typography
+                variant="h4"
+                marginTop="10px"
+                fontSize={{ xs: "1rem", sm: "1.2rem", md: "1.2rem" }}
+              >
+                Find your next big opportunity!
+              </Typography>
+            </Container>
+            <Container className="employer">
+              {loaded ? (
+                <Buttons
+                  button={buttonsEmployer}
+                  filter={filterEmployer}
+                  loaded={loaded}
+                />
+              ) : (
+                <Typography textAlign={"center"}>Loading</Typography>
+              )}
+
+              <Container className="listingEmployee">
+                {loaded && (
+                  <EmployerMenu menuItem={menuItemEmployer} loaded={loaded} />
+                )}
+              </Container>
             </Container>
           </Container>
         </Container>
