@@ -32,7 +32,7 @@ export default function EmployeeMenu({ menuItem }) {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: { xs: "350px", sm: "550px", md: "800px" },
+    width: { xs: "290px", sm: "550px", md: "600px" },
     bgcolor: "background.paper",
     border: "2px solid #000",
     boxShadow: 24,
@@ -59,7 +59,8 @@ export default function EmployeeMenu({ menuItem }) {
               justifyContent: "center",
               backgroundColor: "white",
               mt: "12px",
-              minWidth: { xs: "380px", lg: "700px" },
+              minWidth: { xs: "340px", sm: "500px", md: "600px", lg: "700px" },
+              maxWidth: { xs: "340px", sm: "500px", md: "600px", lg: "750px" },
               minHeight: { xs: "150px" },
               borderRadius: "12px",
               cursor: "pointer",
@@ -81,7 +82,7 @@ export default function EmployeeMenu({ menuItem }) {
               <img className="profilePhoto" src={item.fileURL}></img>
               <Container
                 sx={{
-                  minWidth: { xs: "140px", lg: "450px" },
+                  minWidth: { xs: "140px", lg: "500px" },
                   minHeight: "120px",
                   display: "flex",
                   flexDirection: "column",
@@ -92,7 +93,7 @@ export default function EmployeeMenu({ menuItem }) {
                 <Typography
                   sx={{
                     textAlign: "center",
-                    fontSize: { xs: "1rem", md: "1.2rem" },
+                    fontSize: { xs: "1.2rem", md: "1.2rem" },
                   }}
                 >
                   {item.field}
@@ -100,7 +101,7 @@ export default function EmployeeMenu({ menuItem }) {
                 <Typography
                   sx={{
                     textAlign: "center",
-                    fontSize: { xs: "0.8rem", md: "1rem" },
+                    fontSize: { xs: "0.8rem", sm: "1rem" },
                   }}
                 >
                   {item.jobTitle} in {item.location}
@@ -108,7 +109,7 @@ export default function EmployeeMenu({ menuItem }) {
                 <Typography
                   sx={{
                     textAlign: "center",
-                    fontSize: { xs: "0.8rem", md: "1rem" },
+                    fontSize: { xs: "0.8rem", sm: "1rem" },
                     mt: "2px",
                   }}
                 >
@@ -117,7 +118,7 @@ export default function EmployeeMenu({ menuItem }) {
                 <Typography
                   sx={{
                     textAlign: "center",
-                    fontSize: { xs: "0.9rem", md: "1rem" },
+                    fontSize: { xs: "0.9rem", sm: "1rem" },
                     mt: "2px",
                   }}
                 >
